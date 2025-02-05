@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>Nishant Jhade's Portfolio</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+
+	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+	<link rel="stylesheet" href="css/magnific-popup.css">
+
+	<link rel="stylesheet" href="css/aos.css">
+
+	<link rel="stylesheet" href="css/ionicons.min.css">
+
+	<link rel="stylesheet" href="css/flaticon.css">
+	<link rel="stylesheet" href="css/icomoon.css">
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<style>
+		/*======================================
+//--//-->   ABOUT HRS
+======================================*/
+
+		.about-mf .box-shadow-full {
+			padding-top: 4rem;
+			padding-bottom: 4rem;
+		}
+
+		.about-mf .about-img {
+			margin-bottom: 2rem;
+		}
+
+		.about-mf .about-img img {
+			margin-left: 10px;
+
+		}
+
+
+		.skill-mf .progress {
+			/* background-color: #cde1f8; */
+			margin: .5rem 0 1.2rem 0;
+			border-radius: 0;
+			height: .7rem;
+		}
+
+		.skill-mf .progress .progress-bar {
+			height: .7rem;
+			background-color: #ffbd39;
+		}
+
+
+		/* Animation styles */
+		#typing-animation {
+			position: relative;
+			font-size: 30px;
+			font-weight: bold;
+			color: rgb(255, 255, 255);
+			overflow: hidden;
+			white-space: nowrap;
+			animation: typing 3s steps(20, end) infinite;
+		}
+
+		#typing-animation:before {
+			content: "";
+			/* position: absolute; */
+			top: 0;
+			left: 0;
+			width: 0;
+			height: 100%;
+			background-color: #ccc;
+			animation: typing-cursor 0.5s ease-in-out infinite;
+		}
+
+		@keyframes typing {
+			from {
+				width: 0;
+			}
+
+			to {
+				width: 100%;
+			}
+		}
+
+		@keyframes typing-cursor {
+			from {
+				width: 5px;
+			}
+
+			to {
+				width: 0;
+			}
+		}
+
+
+		/* project image zoom effect */
+
+		.zoom-effect {
+			overflow: hidden;
+			transition: transform 0.3s ease-out;
+		}
+
+		.zoom-effect:hover {
+			transform: scale(1.1);
+		}
+	</style>
+
+
+</head>
+
+</body>
+
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="300">
+
+
+	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar ftco-navbar-light site-navbar-target" id="ftco-navbar">
+		<div class="container">
+			<a class="navbar-brand" href="index.html">Nishant Jhade</a>
+			<button class="navbar-toggler js-fh5co-nav-toggle fh5co-nav-toggle" type="button" data-toggle="collapse"
+				data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="oi oi-menu"></span> Menu
+			</button>
+
+			<div class="collapse navbar-collapse" id="ftco-nav">
+				<ul class="navbar-nav nav ml-auto">
+					<li class="nav-item"><a href="#home-section" class="nav-link"><span>Home</span></a></li>
+					<li class="nav-item"><a href="#about-section" class="nav-link"><span>About</span></a></li>
+					<li class="nav-item"><a href="#resume-section" class="nav-link"><span>Resume</span></a></li>
+					<li class="nav-item"><a href="#project-section" class="nav-link"><span>Projects</span></a></li>
+					<!-- <li class="nav-item"><a href="#Blogs-section" class="nav-link"><span>Blogs</span></a></li> -->
+					<li class="nav-item"><a href="#Certifications-section"
+							class="nav-link"><span>Certifications</span></a></li>
+					<li class="nav-item"><a href="#contact-section" class="nav-link"><span>Contact</span></a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+	<section id="home-section" class="hero">
+		<div class="home-slider  owl-carousel">
+			<div class="slider-item ">
+				<div class="overlay"></div>
+				<div class="container">
+					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
+						data-scrollax-parent="true">
+						<div class="one-third js-fullheight order-md-last img"
+							style="background-image:url(images/try2.gif); background-size: 90% auto;">
+							<div class="overlay"></div>
+						</div>
+						<div class="one-forth d-flex  align-items-center ftco-animate"
+							data-scrollax=" properties: { translateY: '70%' }">
+							<div class="text">
+								<span class="subheading">Hello!</span>
+								<h1 class="mb-4 mt-3">I'm <span>Nishant Jhade</span></h1>
+
+								<!-- Element to contain animated typing -->
+								<span id="typing-animation"></span>
+
+								<script>
+
+									// Initialize the typing animation
+									const typingAnimationElement = document.getElementById('typing-animation');
+
+									// Create an array of typing text
+									const typingTexts = [
+										'Engineer',
+										'MERN Stack Developer',
+									];
+
+									// Create a function to display the typing animation for a given text
+									function playTypingAnimation(text) {
+										// Loop through each character and add it to the element
+										for (let i = 0; i < text.length; i++) {
+											setTimeout(() => {
+												typingAnimationElement.textContent += text[i];
+											}, i * 200); // Increase the delay to slow down the typing animation
+										}
+
+										// Once the animation is complete, reset the text and start over
+										setTimeout(() => {
+											typingAnimationElement.textContent = '';
+											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
+										}, text.length * 200);
+									}
+
+									// Start the typing animation loop
+									playTypingAnimation(typingTexts[0]);
+
+								</script>
+
+								<br>
+								<br>
+								<h2>Software Engineer</h2>
+								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
+								<!-- <br> -->
+								<p>
+									<a href="https://github.com/nishant-x"
+										class="btn btn-white btn-outline-white py-3 px-4">My works</a>
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-about img ftco-section ftco-no-pb" id="about-section">
+		<div class="container">
+			<div class="row">
+				<div class="row d-flex align-items-stretch">
+					<!-- <div class="row d-flex"> -->
+					<div class="col-md-6 col-lg-5 d-flex">
+						<div class="img-about img d-flex align-items-stretch">
+							<div class="overlay">
+								<div class="row">
+									<div class="col-sm-6 col-md-5">
+										<div class="about-img">
+											<img src="images/hrs.jpeg" class="img-fluid b-shadow-a rounded-full" alt="">
+										</div>
+									</div>
+									<!-- Details next to profile image -->
+									<div class="col-sm-6 col-md-7">
+										<div class="about-info">
+											<p><span class="title-s">Name: </span> <span>Nishant Jhade</span></p>
+											<p><span class="title-s">Job Role: </span> <span>Software Engineer</span>
+											</p>
+											<p><span class="title-s">Experience: </span> <span>Fresher</span></p>
+											<p><span class="title-s">Address: </span> <span>Bhopal, Madhya Pradesh
+													India</span></p>
+										</div>
+									</div>
+								</div>
+
+								<div class="skill-mf">
+									<p class="title-s">Skills</p>
+									<span>C</span> <span class="pull-right">95%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 95%;"
+											aria-valuenow="95" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>C++</span> <span class="pull-right">80%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 80%"
+											aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>MERN Stack</span> <span class="pull-right">70%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 70%"
+											aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+									<span>PHP</span> <span class="pull-right">65%</span>
+									<div class="progress">
+										<div class="progress-bar" role="progressbar" style="width: 60%"
+											aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+									</div>
+
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
+						<div class="row justify-content-start pb-3">
+							<div class="col-md-12 heading-section ftco-animate">
+					
+								<h1 class="big">About Me</h1>
+								<h2 class="mb-4">Welcome to My Portfolio</h2>
+					
+								<p>👋 Hi there! I'm a passionate software developer and AI enthusiast, focused on leveraging technology to solve real-world problems. With a strong foundation in programming and development, I'm continuously improving my skills and staying up-to-date with cutting-edge technologies. I am committed to working on projects that drive innovation and make a tangible impact in the tech world.</p>
+					
+								<p>Here's a quick overview of my work:</p>
+					
+								<ul>
+									<li><strong>Management Information System for Police:</strong> Developed a comprehensive system to streamline police operations, featuring real-time officer tracking, automated leave management, and achievement tracking. The system improved operational efficiency and reduced administrative overhead.</li>
+									<li><strong>Building Scalable Applications:</strong> Experienced with the MERN stack, I design and deploy robust web applications tailored to user needs.</li>
+									<li><strong>Collaboration and Growth:</strong> I strive to learn continuously and contribute effectively to team projects, ensuring collaboration and mutual growth.</li>
+								</ul>
+					
+								<p>Throughout my journey, I’ve participated in competitive hackathons and contributed to projects that create real-world impact. Here are some key details about my work and expertise:</p>
+					
+								<ul class="about-info mt-4 px-md-0 px-2">
+									<li class="d-flex"><span>Profile:</span> <span>Software Developer, Web Applications, and Problem-Solving</span></li>
+									<li class="d-flex"><span>Domain:</span> <span>Web Development, AI Innovations, and Hackathons</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology in Computer Science & Engineering (CGPA 7.1)</span></li>
+									<li class="d-flex"><span>Languages:</span> <span>English, Hindi</span></li>
+									<li class="d-flex"><span>Programming:</span> <span>C, C++, MERN Stack, SQL, PHP</span></li>
+									<li class="d-flex"><span>Data Science Skills:</span> <span>Descriptive Analysis, Exploratory Data Analysis, Predictive Analysis</span></li>
+									<li class="d-flex"><span>Technologies:</span> <span>React JS, Express JS, MongoDB, MySQL</span></li>
+									<li class="d-flex"><span>Certifications:</span> <span>NPTEL (C Programming, Modern CPP), Web Development Workshop, Hackathons</span></li>
+									<li class="d-flex"><span>Machine Learning Tools:</span> <span>scikit-learn, OpenCV</span></li>
+									<li class="d-flex"><span>Databases:</span> <span>SQL, MongoDB</span></li>
+									<li class="d-flex"><span>Cloud Computing:</span> <span>Familiar with cloud platforms and deployment practices</span></li>
+									<li class="d-flex"><span>Tools:</span> <span>Git, GitHub, VS Code</span></li>
+									<li class="d-flex"><span>Hackathon Achievements:</span> <span>SISTec Innovation Hackathon (Rank 5), JLU Hackathon (Rank 3)</span></li>
+									<li class="d-flex"><span>Key Projects:</span> <span>Management Information System for Police</span></li>
+									<li class="d-flex"><span>Interests:</span> <span>Sports, Movies, Music, Traveling</span></li>
+								</ul>
+					
+							</div>
+						</div>
+					
+						<div class="counter-wrap ftco-animate d-flex mt-md-3">
+							<div class="text">
+								<p class="mb-4">
+									<span class="number" data-number="5">0</span> <span>+</span>
+									<span>&nbsp; Projects Completed</span>
+								</p>
+								<p><a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/" class="btn btn-primary py-3 px-3">Connect with me on LinkedIn</a></p>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</section>
+
+
+
+
+	<section class="ftco-section ftco-no-pb" id="resume-section">
+		<div class="container">
+			<div class="row justify-content-center pb-5">
+				<div class="col-md-10 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Resume</h1>
+					<h2 class="mb-4">Resume</h2>
+					<p>I’ve honed my skills through hands-on projects and collaboration with teams in India. At Sagar
+						institution of science technology and engineering, I led initiatives like developing the
+						Management Information System for Police, which focused on real-time officer tracking, automated
+						leave management, and achievement portals. Additionally, I worked on optimizing web applications
+						using the MERN stack and SQL, improving system performance and scalability. During my academic
+						journey, I tackled challenges in data management and application deployment, gaining valuable
+						insights into developing scalable, efficient systems.</p>
+				</div>
+			</div>
+
+			<!-- <div class="row">
+				<h1 class="big-4">Experience</h1>
+				<div class="underline"></div>
+			</div>
+			<br>
+
+			<div class="row">
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> March 2024 – Present </span>
+						<h2>Software Developer Intern</h2>
+						<span class="position">[Your Organization Name], [Location]</span>
+						<p class="mt-4">
+							<ul>
+								<li>Led the development of the **Management Information System for Police**, focusing on real-time officer tracking, automated leave management, and achievement portals to enhance operational efficiency.</li>
+								<li>Designed and implemented scalable web applications using **MERN Stack** and **SQL** to manage user data and streamline administrative workflows.</li>
+								<li>Optimized database performance and deployed applications through cloud platforms, ensuring reliability and scalability for real-time usage.</li>
+								<li>Collaborated with cross-functional teams to integrate features and ensure seamless deployment, with a focus on building robust and scalable systems.</li>
+							</ul>
+						</p>
+					</div>
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> March 2024 – Present </span>
+						<h2>Software Developer Intern</h2>
+						<span class="position">[Your Organization Name], [Location]</span>
+						<p class="mt-4">
+							<ul>
+								<li>Led the development and deployment of the **Management Information System for Police**, focusing on real-time officer tracking, automated leave management, and achievement portals to streamline police operations.</li>
+								<li>Developed backend systems and optimized database performance using **MERN Stack**, **SQL**, and **PHP** to manage user data and enhance system functionality.</li>
+								<li>Collaborated with cross-functional teams to design and deploy scalable applications on cloud platforms, ensuring high performance and reliability.</li>
+								<li>Assisted in feature integration, bug fixes, and troubleshooting production issues, ensuring smooth deployment and minimal downtime.</li>
+								<li><b>Achievements</b> - Contributed to successful hackathon projects, earning high rankings in SISTec Innovation Hackathon and JLU Hackathon.</li>
+							</ul>
+						</p>
+					</div>
+				</div> -->
+
+
+			<!-- <div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date"> Aug 2023 – Nov 2023
+						</span>
+						<h2>Data science intern</h2>
+						<span class="position">Livello Technologies, Düsseldorf, Germany</span>
+						<p class="mt-4">
+						<ul>
+							<li></li>
+							<li>Introduced efficient data migration strategies (MongoDB, BigQuery), cutting monthly
+								bills by 42%.</li>
+							<li>Developed new features for the forecast service – confidence bounds, dashboard business
+								metrics, ranking demand
+								tables.</li>
+							<li>Developed ETL pipelines(mongoDB to BigQuery), ensuring data integrity and accessibility
+								for ML tasks.</li>
+							<li>Performed code refactoring, optimization and prepared technical documentation on
+								Confluence.</li>
+
+						</ul>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">Oct 2022- Mar 2023</span>
+						<h2>Artificial Intelligence Intern</h2>
+						<span class="position">Syskron GmbH (Krones), Regensburg, Germany </span>
+						<p class="mt-4">The digitalisation unit of the Krones group, implementing state-of-the-art
+							digital filling and packaging line.
+						<ul>
+							<li>Formulated model retraining strategies based on data and concept drifts for
+								Reinforcement Learning Product -
+								ContiloopAI.</li>
+							<li>Updated data migration and preprocessing pipelines: Implemented feature engineering on
+								raw factory data coming
+								from edge(ReadyKit) via Share2Act to extract unique set points. This saved on-site
+								manual data acquisition field trips.</li>
+							<li>Documented training articles on reinforcement learning, model retraining and monitoring
+								for the AI team.</li>
+						</ul>
+						</p>
+					</div>
+
+				</div>
+
+				<div class="col-md-6">
+					<div class="resume-wrap ftco-animate">
+						<span class="date">Sept 2018- Jul 2021</span>
+						<h2>Data Scientist/ Data Analyst</h2>
+						<span class="position">Government of Madhya Pradesh, Bhopal, India </span>
+						<p class="mt-4">SCHMP, Department of Food, Civil Supplies and Consumer Protection (Run by AS
+							Foundation).
+						<ul>
+							<li>Developed end-to-end machine learning prototypes and scaled them to run in a production
+								environment.</li>
+							<li>Created a SVM based classifier system with 92% accuracy to assign ration cards to
+								different consumer based on their income. This reduced the request processing time for a
+								consumer by 60%</li>
+							<li>Derived actionable insights from massive data obtained from 52 districts of the state to
+								facilitate better policy making decisions.</li>
+							<li> Analyzed old information architectures and contributed to the design and development of
+								new ones.</li>
+							<li> Created easy-to-understand visual dashboards projecting growth and giving insights to
+								facilitate the proper execution of government schemes.</li>
+							<li> Created a chatbot using IBM Watson for quick redressal of urban consumer grievances.
+							</li>
+						</ul>
+						</p>
+					</div>
+
+				</div> -->
+
+		</div>
+
+		<br>
+		<br>
+
+		<div class="row">
+			<h1 class="big-4">Education</h1>
+			<div class="underline"></div>
+		</div>
+		<br>
+
+		<div class="row">
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2022 - Present</span>
+					<h2>Bachelor of Technology - Computer Science & Engineering</h2>
+					<span class="position">Sagar Institute of Science Technology and Engineering, Bhopal</span>
+					<p class="mt-4">Grade: CGPA 7.04</p>
+				</div>
+			</div>
+
+			<div class="col-md-6">
+				<div class="resume-wrap ftco-animate">
+					<span class="date">2021-2022</span>
+					<h2>Higher Secondary School</h2>
+					<span class="position">Government Higher Secondary School, Chilkapure, MP</span>
+					<p class="mt-4">Grade: 85%</p>
+				</div>
+			</div>
+		</div>
+
+
+		<div class="row justify-content-center mt-5">
+			<div class="col-md-6 text-center ftco-animate">
+				<p><a href="Nishants-resume.pdf" class="btn btn-primary py-4 px-5">Download CV</a></p>
+			</div>
+		</div>
+		</div>
+	</section>
+
+
+
+	<section class="ftco-section" id="project-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Projects</h1>
+					<h2 class="mb-4">Projects</h2>
+					<p>Below are some of the projects that I have worked on.</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/nishant-x/MIS" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/MIS.png">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a
+									href="https://github.com/[YourGitHubRepo]/management-information-system-police">Management
+									Information System for Police</a></h3>
+							<p>A comprehensive system developed to enhance police operations with real-time officer
+								tracking, automated leave management, and achievement tracking.</p>
+							<p>
+							<ul>
+								<li>Real-time officer status tracking for efficient duty allocation.</li>
+								<li>Automated leave management system integrated with TI/PHQ approval processes.</li>
+								<li>Achievement portal to track officer accomplishments and encourage recognition.</li>
+								<li>Optimized backend and database performance for reliable and scalable deployment.
+								</li>
+							</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/nishant-x" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/jplppl.png')">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="https://github.com/nishant-x">JPL-PPL</a></h3>
+							<p>Organized JPL and PPL at SISTec, featuring three competitive rounds with an integrated compiler and MCQ system. Managed event structure, participant coordination, and fair evaluation.</p>
+							<p>
+							<ul>
+								<li>Utilized MERN Stack for seamless integration and real-time updates.</li>
+								<li>Ensured fair participant evaluation through an integrated MCQ system.</li>
+								<li>Managed event structure and coordination efficiently.</li>
+							</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/nishant-x" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/carehealth.png')">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="https://github.com/nishant-x">Care-Health</a></h3>
+							<p>A smart OPD management system with an AI-powered chatbot that optimizes patient queues, suggests doctors based on symptoms, and provides real-time tracking. Integrated with hospital inventory and bed management and also ensures efficient stock monitoring.</p>
+							<p>
+							<ul>
+								<li>Implemented using MERN Stack for efficient data handling and real-time performance.</li>
+								<li>Enhanced patient experience with AI-powered chatbot and smart queue management.</li>
+								<li>Integrated hospital inventory and bed management for streamlined operations.</li>
+							</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://github.com/nishant-x/TodoList-In-React" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/todo.png')">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a
+									href="https://github.com/nishant-x/TodoList-In-React">To-Do List Application</a></h3>
+							<p>A user-friendly To-Do List application developed with React JS, featuring local storage integration to persist tasks even after browser refresh.</p>
+							<p>
+							<ul>
+								<li>Add, edit, and delete tasks seamlessly.</li>
+								<li>Utilizes local storage to save tasks for persistent data handling.</li>
+								<li>Responsive design ensuring usability across different devices.</li>
+								<li>Interactive UI with real-time updates and smooth animations.</li>
+								<li>Easy-to-understand code structure for developers to contribute and enhance.</li>
+							</ul>
+							</p>
+						</div>
+					</div>
+				</div>
+				<!-- You can keep the other projects here -->
+			</div>
+		</div>
+
+	</section>
+
+
+	<div class="row justify-content-center mt-5">
+		<div class="col-md-6 text-center ftco-animate">
+			<p><a href="https://github.com/nishant-x" class="btn btn-primary py-4 px-5">More Projects</a></p>
+		</div>
+	</div>
+
+	<!-- <section class="ftco-section" id="Blogs-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Blogs</h1>
+					<h2 class="mb-4">Blogs</h2>
+					<p>Since you have made it this far, I'd love to hear your views on some of the blogs that I've
+						written.</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://medium.com/@hrithikraisaxena97/the-sheer-beauty-of-time-series-analysis-52550b2bc790"
+							class="block-20 zoom-effect" style="background-image: url('images/ts.gif');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://medium.com/@hrithikraisaxena97/the-sheer-beauty-of-time-series-analysis-52550b2bc790">The
+									sheer beauty of Time Series Analysis</a></h3>
+							<p>Understanding the core intuition behind time series analysis.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://medium.com/@hrithikraisaxena97/llms-at-scale-turning-your-prototype-into-a-production-ready-powerhouse-061f1ffbb23f"
+							class="block-20 zoom-effect" style="background-image: url('images/llm_prod.gif');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://medium.com/@hrithikraisaxena97/llms-at-scale-turning-your-prototype-into-a-production-ready-powerhouse-061f1ffbb23f">LLMs
+									at Scale, Turning Your Prototype Into a Production-Ready Powerhouse</a></h3>
+							<p>Providing a comprehensive step-by-step guide from initial experimentation to deploying a
+								production-ready LLM application.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="https://medium.com/@hrithikraisaxena97/when-point-clouds-go-from-dusty-mess-to-michelangelo-level-sculptures-thanks-octree-u-net-c1237b8a4e14"
+							class="block-20 zoom-effect" style="background-image: url('images/point_cloud.gif');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://medium.com/@hrithikraisaxena97/when-point-clouds-go-from-dusty-mess-to-michelangelo-level-sculptures-thanks-octree-u-net-c1237b8a4e14">When
+									Point Clouds Go from ‘Dusty Mess’ to ‘Michelangelo-Level Sculptures’ — Thanks,
+									Octree U-Net!</a></h3>
+							<p>Sick of Messy 3D Data? Let Octree CNNs Do the Dirty Work!...</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<br>
+			 //added justify-content-center to center align the last two projects
+			<div class="row d-flex justify-content-center">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://medium.com/@hrithikraisaxena97/the-salt-revolutionizing-large-language-model-llm-training-with-small-language-models-slms-5fd1c6c4cb86"
+							class="block-20 zoom-effect" style="background-image: url('images/salt.webp');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://medium.com/@hrithikraisaxena97/the-salt-revolutionizing-large-language-model-llm-training-with-small-language-models-slms-5fd1c6c4cb86">The
+									SALT : Revolutionizing Large Language Model (LLM) Training with Small Language
+									Models (SLMs)</a></h3>
+							<p>Lending a small hand to LLM.</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="https://medium.com/@hrithikraisaxena97/the-a-b-testing-bible-d6f8908c0a24"
+							class="block-20 zoom-effect" style="background-image: url('images/ab.webp');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+
+							<h3 class="heading"><a
+									href="https://medium.com/@hrithikraisaxena97/the-a-b-testing-bible-d6f8908c0a24">The
+									A/B testing Bible.</a></h3>
+							<p>Understanding the intuition behind A/B testing from a technical, statistical, business
+								and analytics point of view</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section> -->
+
+	<!-- <div class="row justify-content-center mt-5">
+		<div class="col-md-6 text-center ftco-animate">
+			<p><a href="https://medium.com/@hrithikraisaxena97" class="btn btn-primary py-4 px-5">More Blogs</a></p>
+		</div>
+	</div> -->
+
+	<section class="ftco-section" id="Certifications-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-5">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Certifications</h1>
+					<h2 class="mb-4">Certifications</h2>
+					<p>Here are some of the certifications that I collected along my Engineering Journey.</p>
+				</div>
+			</div>
+			<div class="row d-flex">
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/C-NPTEL.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">NPTEL Elite Certificate in C Programming</a></h3>
+							<p><strong>Issuer:</strong> NPTEL (IIT Kharagpur)</p>
+							<p><strong>Course:</strong> Problem Solving through Programming in C</p>
+							<p><strong>Duration:</strong> Jan-Apr 2024 (12-week course)</p>
+							<p><strong>Score:</strong> 70%</p>
+							<p><strong>Details:</strong>
+								Online Assignments: 24.88/25 <br>
+								Proctored Exam: 45.46/75 <br>
+								Total Candidates: 2,979
+							</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/SISTECHACK01.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">SISTec Innovation Hackathon 2.0</a></h3>
+							<p>Issuer - Sagar Institute of Science Technology & Research</p>
+							<p>This certificate is awarded to <strong>Nishant Jhade</strong> for securing the
+								<strong>5th Rank</strong> in the <strong>SISTec Innovation Hackathon 2.0</strong>, held
+								on April 9th and 10th, 2024. The event was organized by the Department of Computer
+								Science & Engineering at <strong>SISTec - Ratibad, Bhopal</strong>. The certificate is
+								duly signed by:
+							</p>
+							<ul>
+								<li>Prof. Ajit K. Shrivastava (Associate Professor & Head of CSE)</li>
+								<li>Dr. Manish Billore (Principal, SISTec - Ratibad)</li>
+								<li>Dr. Jyoti Deshmukh (Director, Sagar Group of Institutions)</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant//JLUHACK.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">JLU Hackathon/NoCode Hackathon</a></h3>
+							<p>Issuer - Jagran Lakecity University</p>
+							<p>This Certificate of Appreciation is awarded to <strong>Nishant Thade</strong> for
+								achieving the <strong>3rd Rank</strong> in the <strong>Hackathon/NoCode
+									Hackathon</strong>, held on April 29th and 30th, 2024. The event was organized by
+								the <strong>JLU School of Engineering & Technology</strong>. The certificate is duly
+								signed by:</p>
+							<ul>
+								<li>Prof. (Dr.) P.K. Biswas (Vice Chancellor)</li>
+								<li>Dr. Prasheel Suryawanshi (Pro Vice Chancellor)</li>
+								<li>Dr. Dileep Kumar Singh (Convener, Lakecity Hack)</li>
+							</ul>
+
+						</div>
+					</div>
+				</div>
+
+			</div>
+			<br>
+			<!-- added justify-content-center to center align the last two projects -->
+			<div class="row d-flex justify-content-center">
+
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/ciscopython.png');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">Python Essentials 1 Certification</a></h3>
+							<p><strong>Issuer:</strong> Cisco Networking Academy & OpenEDG Python Institute</p>
+							<p><strong>Course:</strong> Python Essentials 1</p>
+							<p><strong>Date:</strong> November 15, 2024</p>
+							<p><strong>Key Skills:</strong></p>
+							<ul>
+								<li>Design, develop, debug, and refactor Python programs</li>
+								<li>Algorithmic problem-solving and implementation</li>
+								<li>Understanding the programmer's role in software development</li>
+
+							</ul>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/gfgcertificate.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">Participation Certificate in Data Structure and Algorithms
+									Workshop</a></h3>
+							<p><strong>Issuer:</strong> GeeksforGeeks & ISTE SC MANIT</p>
+							<p><strong>Event:</strong> Flair Haven’s Data Structure and Algorithm Workshop</p>
+							<p><strong>Date:</strong> September 16–17, 2023</p>
+							<p><strong>Location:</strong> MANIT's Version Beta 6.0</p>
+							<p>This certificate recognizes active and invaluable participation in the workshop.</p>
+						</div>
+					</div>
+				</div>
+
+				<div class="col-md-4 d-flex ftco-animate">
+					<div class="blog-entry justify-content-end">
+						<a href="#" class="block-20 zoom-effect"
+							style="background-image: url('images/Nishant/codingninjas.jpg');">
+						</a>
+						<div class="text mt-3 float-right d-block">
+							<h3 class="heading"><a href="#">Ninja Playground 2.0 21 Day Coding Challenge</a></h3>
+							<p>Issuer - Coding Ninjas</p>
+							<p>Certificate of Participation awarded to Nishant Jhade for completing the Ninja Playground
+								2.0 21 Day Coding Challenge. Signed by Ankush Singla (Founder, Coding Ninjas).</p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-md-7 ftco-animate text-center">
+				<h2> <a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"
+						class="btn btn-primary py-3 px-5">More Certifications</a> </h2>
+			</div>
+		</div>
+
+	</section>
+
+
+	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
+		<div class="container">
+			<div class="row d-md-flex align-items-center">
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="15">0</strong>
+							<span>Achievements</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="5">0</strong>
+							<span>Projects</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="2">0</strong>
+							<span>DS/ML softwares deployed</span>
+						</div>
+					</div>
+				</div>
+				<div class="col-md d-flex justify-content-center counter-wrap ftco-animate">
+					<div class="block-18">
+						<div class="text">
+							<strong class="number" data-number="1715">0</strong>
+							<span>Cups of coffee</span>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="ftco-section ftco-hireme img margin-top"
+			style="background-image: url(images/sen.gif); background-size: 70% auto;">
+			<!-- <div class="container"> -->
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2>More projects on<span> Github </span> </h2>
+					<div class="heading">
+						<h4> I love to solve business problems &amp; uncover hidden data stories </h4>
+						<br>
+						<p><a href="https://github.com/nishant-x" class="btn btn-primary py-3 px-5">GitHub</a></p>
+					</div>
+				</div>
+			</div>
+			<!-- </div> -->
+		</div>
+	</section>
+
+	<div id="app"></div>
+	<!-- Include the widget script from dist/modern or dist/legacy -->
+
+
+
+	<section class="ftco-section contact-section ftco-no-pb" id="contact-section">
+		<div class="container">
+			<div class="row justify-content-center mb-5 pb-3">
+				<div class="col-md-7 heading-section text-center ftco-animate">
+					<h1 class="big big-2">Contact</h1>
+					<h2 class="mb-4">Contact Me</h2>
+					<p>Below are the details to reach out to me!</p>
+				</div>
+			</div>
+
+
+			<div class="row d-flex contact-info mb-5">
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-map-signs"></span>
+						</div>
+						<h3 class="mb-4">Address</h3>
+						<p>Bhopal, Madhya Pradesh</p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-phone2"></span>
+						</div>
+						<h3 class="mb-4">Contact Number</h3>
+						<p><a href="tel://0101010101">+91 7067056699</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-paper-plane"></span>
+						</div>
+						<h3 class="mb-4">Email Address</h3>
+						<p><a href="jhadenishant@gmail.com">jhadenishant@gmail.com</a></p>
+					</div>
+				</div>
+				<div class="col-md-6 col-lg-3 d-flex ftco-animate">
+					<div class="align-self-stretch box p-4 text-center">
+						<div class="icon d-flex align-items-center justify-content-center">
+							<span class="icon-globe"></span>
+						</div>
+						<h3 class="mb-4">Download Resume</h3>
+						<p><a href="Nishants-resume.pdf">Click Me</a></p>
+					</div>
+				</div>
+
+				<div class="container">
+					<br>
+					<br>
+					<div class="row justify-content-center">
+						<div class="col-md-7 ftco-animate text-center">
+							<h2>Have a<span> Question? </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTrcDdpOwd1g6KMaXtlz50VoFRI-AfmGvdJT3s31Q1GlTfPA/viewform?usp=dialog"
+									class="btn btn-primary py-3 px-5">Click Here</a> </h2>
+						</div>
+					</div>
+					<br>
+					<ul class="ftco-footer-social list-unstyled d-flex justify-content-center align-items-center mb-0">
+						<li class="ftco-animate normal-txt">Let's connect over... </li>
+						<li class="ftco-animate"><a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"><span
+									class="icon-linkedin"></span></a></li>
+						<li class="ftco-animate"><a href="https://www.instagram.com/ll__nishant_jhade__ll/"><span
+									class="icon-instagram"></span></a></li>
+						<!-- <li class="ftco-animate"><a href="https://medium.com/@hrithikraisaxena97"><span
+									class="icon-medium"></span></a></li> -->
+					</ul>
+					<br>
+				</div>
+			</div>
+	</section>
+
+
+	<footer class="ftco-footer ftco-section">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 text-center">
+
+					<p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+						Copyright &copy;
+						<script>document.write(new Date().getFullYear());</script> All rights reserved | This template
+						is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by
+						<a href="https://colorlib.com" target="_blank">Colorlib</a>
+						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+					</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- loader -->
+	<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
+			<circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
+			<circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
+				stroke="#F96D00" />
+		</svg></div>
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="js/popper.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="js/jquery.easing.1.3.js"></script>
+	<script src="js/jquery.waypoints.min.js"></script>
+	<script src="js/jquery.stellar.min.js"></script>
+	<script src="js/owl.carousel.min.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src="js/aos.js"></script>
+	<script src="js/jquery.animateNumber.min.js"></script>
+	<script src="js/scrollax.min.js"></script>
+	<script type="module">
+		src = "https://unpkg.com/docsgpt/dist/modern/main.js"
+		window.onload = function () {
+			renderDocsGPTWidget("app", {
+				apiKey: "a4558c46-c1ce-4a6e-a713-f0ab315ea7df",
+				avatar: 'images/hrs.png',
+				size: "medium",
+				description: "Hrithik's clone",
+				heroTitle: "Hey there...",
+				heroDescription: 'Thanks for landing here. I am a digital twin of Nishant Jhade, feel free to ask any questions.',
+			});
+		};
+	</script>
+
+	<script src="js/main.js"></script>
+
+</body>
+
+</html>
