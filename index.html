@@ -8,7 +8,7 @@
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900" rel="stylesheet">
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
+	<!-- <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css"> -->
 	<link rel="stylesheet" href="css/animate.css">
 
 	<link rel="stylesheet" href="css/owl.carousel.min.css">
@@ -53,8 +53,55 @@
 
 		.skill-mf .progress .progress-bar {
 			height: .7rem;
-			background-color: #ffbd39;
+			background-color: #00eeff;
 		}
+		/* Skill Section Styling */
+.skill-mf {
+    padding: 20px;
+    background: #121212; /* Dark Background */
+    border-radius: 12px;
+    box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.2);
+}
+
+/* Skill Title */
+.title-s {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00eeff; /* Neon Blue */
+    margin-bottom: 15px;
+}
+
+/* Skill Label */
+.skill-mf span {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+/* Progress Bar Container */
+.progress {
+    height: 10px;
+    background: rgba(255, 255, 255, 0.1); /* Light Background */
+    border-radius: 5px;
+    overflow: hidden;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+/* Animated Progress Bar */
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #00eeff, #0077ff); /* Neon Blue Gradient */
+    border-radius: 5px;
+    width: 0; /* Initially Set to 0% */
+    transition: width 2s ease-in-out; /* Smooth Fill Animation */
+}
+
+/* Apply animation when the section is visible */
+.skill-mf.animated .progress-bar {
+    width: var(--progress-width);
+}
+
 
 
 		/* Animation styles */
@@ -100,15 +147,97 @@
 		}
 
 
-		/* project image zoom effect */
-
 		.zoom-effect {
 			overflow: hidden;
-			transition: transform 0.3s ease-out;
+			transition: transform 0.4s ease-out, box-shadow 0.4s ease-out, border 0.4s ease-out;
+			display: inline-block;
+			border-radius: 10px;
+			/* Slight rounding for a modern feel */
+			border: 2px solid transparent;
+			/* Initial border */
 		}
 
+		/* ✨ Hover Effect: Smooth Zoom, Glow & Border */
 		.zoom-effect:hover {
 			transform: scale(1.1);
+			/* Enlarges the image */
+			box-shadow: 0px 0px 20px rgba(0, 238, 255, 0.7);
+			/* Soft neon glow */
+			filter: brightness(1.1) contrast(1.1);
+			/* Enhances colors */
+			border: 2px solid rgba(0, 238, 255, 0.8);
+			/* Glowing border */
+		}
+
+		/* 🌊 Subtle Wavy Animation (For Floating Effect) */
+		@keyframes waveEffect {
+			0% {
+				transform: scale(1);
+			}
+
+			50% {
+				transform: scale(1.05);
+			}
+
+			100% {
+				transform: scale(1);
+			}
+		}
+
+		/* Apply animation for a subtle floating feel */
+		.zoom-effect {
+			animation: waveEffect 3s ease-in-out infinite;
+		}
+
+
+		.lottie-container {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			height: 100vh;
+			/* Adjust if needed */
+			width: 100%;
+			/* margin-top: 1rem; */
+			margin-left: 3.5rem;
+		}
+
+		.lottie-container dotlottie-player {
+			transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
+			display: block;
+			/* Ensures it's not inline */
+			margin: auto;
+			/* Centers the animation */
+		}
+
+		/* 🔥 Hover Effect: Subtle Zoom & Glow */
+		.lottie-container:hover dotlottie-player {
+			transform: scale(1.08) rotate(2deg);
+			/* Slight tilt for a dynamic feel */
+			filter: drop-shadow(0px 0px 25px rgba(9, 233, 249, 0.7));
+			/* Glowing effect */
+		}
+
+		/* ✨ Idle Subtle Floating Effect */
+		@keyframes floatAnimation {
+			0% {
+				transform: translateY(0);
+				filter: drop-shadow(0px 0px 10px rgba(0, 238, 255, 0.4));
+			}
+
+			50% {
+				transform: translateY(-10px);
+				filter: drop-shadow(0px 0px 15px rgba(0, 238, 255, 0.6));
+			}
+
+			100% {
+				transform: translateY(0);
+				filter: drop-shadow(0px 0px 10px rgba(0, 238, 255, 0.4));
+			}
+		}
+
+		/* Apply the floating effect */
+		.lottie-container dotlottie-player {
+			animation: floatAnimation 3s ease-in-out infinite;
 		}
 	</style>
 
@@ -149,8 +278,14 @@
 				<div class="container">
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
-						<div class="one-third js-fullheight order-md-last img"
-							style="background-image:url(images/try2.gif); background-size: 90% auto;">
+						<div class="one-third js-fullheight order-md-last img">
+							<div class="lottie-container">
+								<dotlottie-player
+									src="https://lottie.host/76859292-cc6b-462f-b1d6-6c9bbd64ec19/NcanRQwcTr.lottie"
+									background="transparent" speed="1" style="width: 700px; height: 600px;" loop
+									autoplay></dotlottie-player>
+							</div>
+
 							<div class="overlay"></div>
 						</div>
 						<div class="one-forth d-flex  align-items-center ftco-animate"
@@ -275,54 +410,77 @@
 					<div class="col-md-6 col-lg-7 pl-lg-5 pb-5">
 						<div class="row justify-content-start pb-3">
 							<div class="col-md-12 heading-section ftco-animate">
-					
+
 								<h1 class="big">About Me</h1>
 								<h2 class="mb-4">Welcome to My Portfolio</h2>
-					
-								<p>👋 Hi there! I'm a passionate software developer and AI enthusiast, focused on leveraging technology to solve real-world problems. With a strong foundation in programming and development, I'm continuously improving my skills and staying up-to-date with cutting-edge technologies. I am committed to working on projects that drive innovation and make a tangible impact in the tech world.</p>
-					
+
+								<p>👋 Hi there! I'm a passionate software developer and AI enthusiast, focused on
+									leveraging technology to solve real-world problems. With a strong foundation in
+									programming and development, I'm continuously improving my skills and staying
+									up-to-date with cutting-edge technologies. I am committed to working on projects
+									that drive innovation and make a tangible impact in the tech world.</p>
+
 								<p>Here's a quick overview of my work:</p>
-					
+
 								<ul>
-									<li><strong>Management Information System for Police:</strong> Developed a comprehensive system to streamline police operations, featuring real-time officer tracking, automated leave management, and achievement tracking. The system improved operational efficiency and reduced administrative overhead.</li>
-									<li><strong>Building Scalable Applications:</strong> Experienced with the MERN stack, I design and deploy robust web applications tailored to user needs.</li>
-									<li><strong>Collaboration and Growth:</strong> I strive to learn continuously and contribute effectively to team projects, ensuring collaboration and mutual growth.</li>
+									<li><strong>Management Information System for Police:</strong> Developed a
+										comprehensive system to streamline police operations, featuring real-time
+										officer tracking, automated leave management, and achievement tracking. The
+										system improved operational efficiency and reduced administrative overhead.</li>
+									<li><strong>Building Scalable Applications:</strong> Experienced with the MERN
+										stack, I design and deploy robust web applications tailored to user needs.</li>
+									<li><strong>Collaboration and Growth:</strong> I strive to learn continuously and
+										contribute effectively to team projects, ensuring collaboration and mutual
+										growth.</li>
 								</ul>
-					
-								<p>Throughout my journey, I’ve participated in competitive hackathons and contributed to projects that create real-world impact. Here are some key details about my work and expertise:</p>
-					
+
+								<p>Throughout my journey, I’ve participated in competitive hackathons and contributed to
+									projects that create real-world impact. Here are some key details about my work and
+									expertise:</p>
+
 								<ul class="about-info mt-4 px-md-0 px-2">
-									<li class="d-flex"><span>Profile:</span> <span>Software Developer, Web Applications, and Problem-Solving</span></li>
-									<li class="d-flex"><span>Domain:</span> <span>Web Development, AI Innovations, and Hackathons</span></li>
-									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology in Computer Science & Engineering (CGPA 7.1)</span></li>
+									<li class="d-flex"><span>Profile:</span> <span>Software Developer, Web Applications,
+											and Problem-Solving</span></li>
+									<li class="d-flex"><span>Domain:</span> <span>Web Development, AI Innovations, and
+											Hackathons</span></li>
+									<li class="d-flex"><span>Education:</span> <span>Bachelor of Technology in Computer
+											Science & Engineering (CGPA 7.1)</span></li>
 									<li class="d-flex"><span>Languages:</span> <span>English, Hindi</span></li>
-									<li class="d-flex"><span>Programming:</span> <span>C, C++, MERN Stack, SQL, PHP</span></li>
-									<!-- <li class="d-flex"><span>Data Science Skills:</span> <span>Descriptive Analysis, Exploratory Data Analysis, Predictive Analysis</span></li> -->
-									<li class="d-flex"><span>Technologies:</span> <span>React JS, Express JS, MongoDB, MySQL</span></li>
-									<li class="d-flex"><span>Certifications:</span> <span>NPTEL (C Programming, Modern CPP), Web Development Workshop, Hackathons</span></li>
+									<li class="d-flex"><span>Programming:</span> <span>C, C++, MERN Stack, SQL,
+											PHP</span></li>
+									<!-- 
+									<li class="d-flex"><span>Data Science Skills:</span> <span>Descriptive Analysis, Exploratory Data Analysis, Predictive Analysis</span></li> -->
+									<li class="d-flex"><span>Technologies:</span> <span>React JS, Express JS, MongoDB,
+											MySQL</span></li>
+									<li class="d-flex"><span>Certifications:</span> <span>NPTEL (C Programming, Modern
+											CPP), Web Development Workshop, Hackathons</span></li>
 									<!-- <li class="d-flex"><span>Machine Learning Tools:</span> <span>scikit-learn, OpenCV</span></li> -->
 									<!-- <li class="d-flex"><span>Databases:</span> <span>SQL, MongoDB</span></li> -->
 									<!-- <li class="d-flex"><span>Cloud Computing:</span> <span>Familiar with cloud platforms and deployment practices</span></li> -->
 									<li class="d-flex"><span>Tools:</span> <span>Git, GitHub, VS Code</span></li>
-									<li class="d-flex"><span>Hackathon Achievements:</span> <span>SISTec Innovation Hackathon (Rank 5), JLU Hackathon (Rank 3)</span></li>
-									<li class="d-flex"><span>Key Projects:</span> <span>Management Information System for Police</span></li>
-									<li class="d-flex"><span>Interests:</span> <span>Sports, Movies, Music, Traveling</span></li>
+									<li class="d-flex"><span>Hackathon Achievements:</span> <span>SISTec Innovation
+											Hackathon (Rank 5), JLU Hackathon (Rank 3)</span></li>
+									<li class="d-flex"><span>Key Projects:</span> <span>Management Information System
+											for Police</span></li>
+									<li class="d-flex"><span>Interests:</span> <span>Sports, Movies, Music,
+											Traveling</span></li>
 								</ul>
-					
+
 							</div>
 						</div>
-					
+
 						<div class="counter-wrap ftco-animate d-flex mt-md-3">
 							<div class="text">
 								<p class="mb-4">
 									<span class="number" data-number="5">0</span> <span>+</span>
 									<span>&nbsp; Projects Completed</span>
 								</p>
-								<p><a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/" class="btn btn-primary py-3 px-3">Connect with me on LinkedIn</a></p>
+								<p><a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"
+										class="btn btn-primary py-3 px-3">Connect with me on LinkedIn</a></p>
 							</div>
 						</div>
 					</div>
-					
+
 				</div>
 			</div>
 		</div>
@@ -514,95 +672,67 @@
 					<p>Below are some of the projects that I have worked on.</p>
 				</div>
 			</div>
-			<div class="row d-flex">
+			<div class="row">
+				<!-- Project Card -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/nishant-x/MIS" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/MIS.png">
+					<div class="project-card">
+						<a href="https://github.com/nishant-x/MIS">
+							<img src="images/Nishant/MIS.png" alt="MIS Project">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a
-									href="https://github.com/[YourGitHubRepo]/management-information-system-police">Management
-									Information System for Police</a></h3>
-							<p>A comprehensive system developed to enhance police operations with real-time officer
-								tracking, automated leave management, and achievement tracking.</p>
-							<p>
-							<ul>
-								<li>Real-time officer status tracking for efficient duty allocation.</li>
-								<li>Automated leave management system integrated with TI/PHQ approval processes.</li>
-								<li>Achievement portal to track officer accomplishments and encourage recognition.</li>
-								<li>Optimized backend and database performance for reliable and scalable deployment.
-								</li>
-							</ul>
-							</p>
+						<div class="project-content">
+							<h3><a href="https://github.com/nishant-x/MIS">Management Information System</a></h3>
+							<p>Enhancing police operations with real-time tracking, automated leave, and performance
+								monitoring.</p>
 						</div>
 					</div>
 				</div>
-				
+
+
+				<!-- Project Card -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/nishant-x" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/jplppl.png')">
+					<div class="project-card">
+						<a href="https://github.com/nishant-x">
+							<img src="images/Nishant/carehealth.png" alt="Care-Health">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/nishant-x">JPL-PPL</a></h3>
-							<p>Organized JPL and PPL at SISTec, featuring three competitive rounds with an integrated compiler and MCQ system. Managed event structure, participant coordination, and fair evaluation.</p>
-							<p>
-							<ul>
-								<li>Utilized MERN Stack for seamless integration and real-time updates.</li>
-								<li>Ensured fair participant evaluation through an integrated MCQ system.</li>
-								<li>Managed event structure and coordination efficiently.</li>
-							</ul>
-							</p>
+						<div class="project-content">
+							<h3><a href="https://github.com/nishant-x">Care-Health</a></h3>
+							<p>AI-powered OPD management system optimizing queues and providing real-time hospital
+								tracking.</p>
 						</div>
 					</div>
 				</div>
-				
+
+				<!-- Project Card -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/nishant-x" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/carehealth.png')">
+					<div class="project-card">
+						<a href="https://github.com/nishant-x">
+							<img src="images/Nishant/jplppl.png" alt="JPL-PPL Project">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="https://github.com/nishant-x">Care-Health</a></h3>
-							<p>A smart OPD management system with an AI-powered chatbot that optimizes patient queues, suggests doctors based on symptoms, and provides real-time tracking. Integrated with hospital inventory and bed management and also ensures efficient stock monitoring.</p>
-							<p>
-							<ul>
-								<li>Implemented using MERN Stack for efficient data handling and real-time performance.</li>
-								<li>Enhanced patient experience with AI-powered chatbot and smart queue management.</li>
-								<li>Integrated hospital inventory and bed management for streamlined operations.</li>
-							</ul>
-							</p>
+						<div class="project-content">
+							<h3><a href="https://github.com/nishant-x">JPL-PPL</a></h3>
+							<p>Organized coding competitions with real-time compilers and MCQ integration using MERN
+								Stack.</p>
 						</div>
 					</div>
 				</div>
-				
+
+				<!-- Project Card -->
 				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="https://github.com/nishant-x/TodoList-In-React" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/todo.png')">
+					<div class="project-card">
+						<a href="https://github.com/nishant-x/TodoList-In-React">
+							<img src="images/Nishant/todo.png" alt="To-Do List">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a
-									href="https://github.com/nishant-x/TodoList-In-React">To-Do List Application</a></h3>
-							<p>A user-friendly To-Do List application developed with React JS, featuring local storage integration to persist tasks even after browser refresh.</p>
-							<p>
-							<ul>
-								<li>Add, edit, and delete tasks seamlessly.</li>
-								<li>Utilizes local storage to save tasks for persistent data handling.</li>
-								<li>Responsive design ensuring usability across different devices.</li>
-								<li>Interactive UI with real-time updates and smooth animations.</li>
-								<li>Easy-to-understand code structure for developers to contribute and enhance.</li>
-							</ul>
-							</p>
+						<div class="project-content">
+							<h3><a href="https://github.com/nishant-x/TodoList-In-React">To-Do List Application</a></h3>
+							<p>A React-based to-do list with local storage, real-time updates, and a sleek UI.</p>
 						</div>
 					</div>
 				</div>
-				<!-- You can keep the other projects here -->
 			</div>
 		</div>
-
 	</section>
+
+
 
 
 	<div class="row justify-content-center mt-5">
@@ -710,152 +840,108 @@
 		</div>
 	</div> -->
 
-	<section class="ftco-section" id="Certifications-section">
+	<section class="certification-section" id="Certifications-section">
 		<div class="container">
 			<div class="row justify-content-center mb-5 pb-5">
-				<div class="col-md-7 heading-section text-center ftco-animate">
-					<h1 class="big big-2">Certifications</h1>
-					<h2 class="mb-4">Certifications</h2>
-					<p>Here are some of the certifications that I collected along my Engineering Journey.</p>
+				<div class="col-md-7 heading-section text-center animate-cert">
+					<h1 class="big-title">Certifications</h1>
+					<h2 class="section-title">Certifications</h2>
+					<p>Here are some of the certifications I collected along my Engineering Journey.</p>
 				</div>
 			</div>
-			<div class="row d-flex">
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/C-NPTEL.png');">
+	
+			<div class="row">
+				<!-- Certification Card 1 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/C-NPTEL.png" alt="NPTEL C Programming">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">NPTEL Elite Certificate in C Programming</a></h3>
+						<div class="cert-content">
+							<h3><a href="#">NPTEL Elite Certificate in C Programming</a></h3>
 							<p><strong>Issuer:</strong> NPTEL (IIT Kharagpur)</p>
-							<p><strong>Course:</strong> Problem Solving through Programming in C</p>
-							<p><strong>Duration:</strong> Jan-Apr 2024 (12-week course)</p>
 							<p><strong>Score:</strong> 70%</p>
-							<p><strong>Details:</strong>
-								Online Assignments: 24.88/25 <br>
-								Proctored Exam: 45.46/75 <br>
-								Total Candidates: 2,979
-							</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/SISTECHACK01.jpg');">
+	
+				<!-- Certification Card 2 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/SISTECHACK01.jpg" alt="SISTec Hackathon">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">SISTec Innovation Hackathon 2.0</a></h3>
-							<p>Issuer - Sagar Institute of Science Technology & Research</p>
-							<p>This certificate is awarded to <strong>Nishant Jhade</strong> for securing the
-								<strong>5th Rank</strong> in the <strong>SISTec Innovation Hackathon 2.0</strong>, held
-								on April 9th and 10th, 2024. The event was organized by the Department of Computer
-								Science & Engineering at <strong>SISTec - Ratibad, Bhopal</strong>. The certificate is
-								duly signed by:
-							</p>
-							<ul>
-								<li>Prof. Ajit K. Shrivastava (Associate Professor & Head of CSE)</li>
-								<li>Dr. Manish Billore (Principal, SISTec - Ratibad)</li>
-								<li>Dr. Jyoti Deshmukh (Director, Sagar Group of Institutions)</li>
-							</ul>
-
+						<div class="cert-content">
+							<h3><a href="#">SISTec Innovation Hackathon 2.0</a></h3>
+							<p><strong>Issuer:</strong> SISTec - Bhopal</p>
+							<p><strong>Achievement:</strong> Secured 5th Rank</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant//JLUHACK.jpg');">
+	
+				<!-- Certification Card 3 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/JLUHACK.jpg" alt="JLU Hackathon">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">JLU Hackathon/NoCode Hackathon</a></h3>
-							<p>Issuer - Jagran Lakecity University</p>
-							<p>This Certificate of Appreciation is awarded to <strong>Nishant Thade</strong> for
-								achieving the <strong>3rd Rank</strong> in the <strong>Hackathon/NoCode
-									Hackathon</strong>, held on April 29th and 30th, 2024. The event was organized by
-								the <strong>JLU School of Engineering & Technology</strong>. The certificate is duly
-								signed by:</p>
-							<ul>
-								<li>Prof. (Dr.) P.K. Biswas (Vice Chancellor)</li>
-								<li>Dr. Prasheel Suryawanshi (Pro Vice Chancellor)</li>
-								<li>Dr. Dileep Kumar Singh (Convener, Lakecity Hack)</li>
-							</ul>
-
+						<div class="cert-content">
+							<h3><a href="#">JLU Hackathon/NoCode Hackathon</a></h3>
+							<p><strong>Issuer:</strong> Jagran Lakecity University</p>
+							<p><strong>Achievement:</strong> 3rd Rank</p>
 						</div>
 					</div>
 				</div>
-
-			</div>
-			<br>
-			<!-- added justify-content-center to center align the last two projects -->
-			<div class="row d-flex justify-content-center">
-
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/ciscopython.png');">
+	
+				<!-- Certification Card 4 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/ciscopython.png" alt="Cisco Python Certification">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">Python Essentials 1 Certification</a></h3>
-							<p><strong>Issuer:</strong> Cisco Networking Academy & OpenEDG Python Institute</p>
-							<p><strong>Course:</strong> Python Essentials 1</p>
-							<p><strong>Date:</strong> November 15, 2024</p>
-							<p><strong>Key Skills:</strong></p>
-							<ul>
-								<li>Design, develop, debug, and refactor Python programs</li>
-								<li>Algorithmic problem-solving and implementation</li>
-								<li>Understanding the programmer's role in software development</li>
-
-							</ul>
+						<div class="cert-content">
+							<h3><a href="#">Python Essentials 1 Certification</a></h3>
+							<p><strong>Issuer:</strong> Cisco Networking Academy</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/gfgcertificate.jpg');">
+	
+				<!-- Certification Card 5 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/gfgcertificate.jpg" alt="GeeksforGeeks Certification">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">Participation Certificate in Data Structure and Algorithms
-									Workshop</a></h3>
+						<div class="cert-content">
+							<h3><a href="#">Data Structure & Algorithm Workshop</a></h3>
 							<p><strong>Issuer:</strong> GeeksforGeeks & ISTE SC MANIT</p>
-							<p><strong>Event:</strong> Flair Haven’s Data Structure and Algorithm Workshop</p>
-							<p><strong>Date:</strong> September 16–17, 2023</p>
-							<p><strong>Location:</strong> MANIT's Version Beta 6.0</p>
-							<p>This certificate recognizes active and invaluable participation in the workshop.</p>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-md-4 d-flex ftco-animate">
-					<div class="blog-entry justify-content-end">
-						<a href="#" class="block-20 zoom-effect"
-							style="background-image: url('images/Nishant/codingninjas.jpg');">
+	
+				<!-- Certification Card 6 -->
+				<div class="col-md-4 d-flex animate-cert">
+					<div class="cert-card">
+						<a href="#">
+							<img src="images/Nishant/codingninjas.jpg" alt="Coding Ninjas">
 						</a>
-						<div class="text mt-3 float-right d-block">
-							<h3 class="heading"><a href="#">Ninja Playground 2.0 21 Day Coding Challenge</a></h3>
-							<p>Issuer - Coding Ninjas</p>
-							<p>Certificate of Participation awarded to Nishant Jhade for completing the Ninja Playground
-								2.0 21 Day Coding Challenge. Signed by Ankush Singla (Founder, Coding Ninjas).</p>
+						<div class="cert-content">
+							<h3><a href="#">Ninja Playground 2.0 Coding Challenge</a></h3>
+							<p><strong>Issuer:</strong> Coding Ninjas</p>
 						</div>
 					</div>
 				</div>
-
 			</div>
+	
+			<div class="row justify-content-center">
+				<div class="col-md-7 ftco-animate text-center">
+					<h2> <a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"
+							class="btn btn-primary py-3 px-5">More Certifications</a> </h2>
+				</div>
 		</div>
-
-		<div class="row justify-content-center">
-			<div class="col-md-7 ftco-animate text-center">
-				<h2> <a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"
-						class="btn btn-primary py-3 px-5">More Certifications</a> </h2>
-			</div>
-		</div>
-
 	</section>
+	
+	
 
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
@@ -972,7 +1058,8 @@
 					<br>
 					<div class="row justify-content-center">
 						<div class="col-md-7 ftco-animate text-center">
-							<h2>Have a<span> Question? </span> <a href="https://docs.google.com/forms/d/e/1FAIpQLSdTrcDdpOwd1g6KMaXtlz50VoFRI-AfmGvdJT3s31Q1GlTfPA/viewform?usp=dialog"
+							<h2>Have a<span> Question? </span> <a
+									href="https://docs.google.com/forms/d/e/1FAIpQLSdTrcDdpOwd1g6KMaXtlz50VoFRI-AfmGvdJT3s31Q1GlTfPA/viewform?usp=dialog"
 									class="btn btn-primary py-3 px-5">Click Here</a> </h2>
 						</div>
 					</div>
@@ -1043,6 +1130,8 @@
 			});
 		};
 	</script>
+
+	<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 
 	<script src="js/main.js"></script>
 

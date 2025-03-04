@@ -5,40 +5,42 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
+  --blue: #00a78e;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
-  --red: #dc3545;
+  --red: #ff4c60;
   --orange: #fd7e14;
-  --yellow: #ffc107;
-  --green: #28a745;
+  --yellow: #00eeff;
+  --green: #2ecc71;
   --teal: #20c997;
   --cyan: #17a2b8;
-  --white: #fff;
+  --white: #ffffff;
   --gray: #6c757d;
-  --gray-dark: #343a40;
-  --primary: #007bff;
+  --gray-dark: #1e1e1e;
+  --primary: #00a78e;
   --secondary: #6c757d;
-  --success: #28a745;
+  --success: #2ecc71;
   --info: #17a2b8;
   --warning: #ffc107;
-  --danger: #dc3545;
+  --danger: #ff4c60;
   --light: #f8f9fa;
-  --dark: #343a40;
-  --breakpoint-xs: 0;
-  --breakpoint-sm: 576px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 992px;
-  --breakpoint-xl: 1200px;
+  --dark: #1e1e1e;
+
+  --background: #151515;
+  --text-light: #e4e4e4;
+  --text-dark: #0a0a0a;
+
   --font-family-sans-serif: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace; }
+  --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
 
 *,
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+}
 
 html {
   font-family: sans-serif;
@@ -166,7 +168,15 @@ figure {
 
 img {
   vertical-align: middle;
-  border-style: none; }
+  border-style: none;
+  border-radius: 15%;
+}
+img:hover {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0px 0px 20px 5px rgba(0, 167, 142, 0.6); /* Teal glow effect */
+}
+
 
 svg {
   overflow: hidden;
@@ -392,9 +402,12 @@ mark,
   .blockquote-footer::before {
     content: "\2014\00A0"; }
 
-.img-fluid {
-  max-width: 100%;
-  height: auto; }
+ .img-fluid {
+  
+      max-width: 140%;
+      height: 169px;
+      object-fit: cover;
+  }
 
 .img-thumbnail {
   padding: 0.25rem;
@@ -472,14 +485,228 @@ pre {
   margin-right: auto;
   margin-left: auto; }
 
+/* Modern Row Styling */
 .row {
-  display: -webkit-box;
-  display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
   flex-wrap: wrap;
   margin-right: -15px;
-  margin-left: -15px; }
+  margin-left: -15px;
+  justify-content: center; /* Centers items */
+}
+
+/* Resume Card Styling */
+.resume-wrap {
+  background: #1a1a1a; /* Dark Modern Background */
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.2);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  text-align: center;
+  border: 1px solid rgba(0, 238, 255, 0.2); /* Subtle Neon Border */
+  position: relative;
+  overflow: hidden;
+}
+
+/* Hover Effect: Smooth Lift & Glow */
+.resume-wrap:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 8px 25px rgba(0, 238, 255, 0.4);
+  border-color: rgba(0, 238, 255, 0.8); /* Brighter Neon Glow */
+}
+
+/* Date Styling */
+.resume-wrap .date {
+ 
+  color: #000;
+  font-size: 14px;
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* Heading (Degree Name) */
+.resume-wrap h2 {
+  font-size: 20px;
+  color: #fff;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Institution Name */
+.resume-wrap .position {
+  font-size: 16px;
+  color: #bbb; /* Light Gray */
+  font-weight: normal;
+}
+
+/* Grade Styling */
+.resume-wrap p {
+  font-size: 15px;
+  color: #ddd;
+  margin-top: 10px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .resume-wrap {
+      padding: 15px;
+  }
+
+  .resume-wrap h2 {
+      font-size: 18px;
+  }
+
+  .resume-wrap .position {
+      font-size: 14px;
+  }
+
+  .resume-wrap p {
+      font-size: 13px;
+  }
+}
+
+/* Dark Theme Background */
+.certification-section {
+  padding: 7em 0;
+}
+
+/* Title Styling */
+.big-title {
+  font-size: 50px;
+  color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: -1;
+}
+
+.section-title {
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+}
+
+/* Certification Card Styling */
+.cert-card {
+  background: #1a1a1a; /* Dark Modern Background */
+  padding: 6px;
+  border-radius: 15px; /* Rounded Borders */
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  text-align: center;
+  border: 1px solid rgba(0, 238, 255, 0.2); /* Subtle Neon Glow */
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+ 
+}
+
+/* Make All Cards Equal Height */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.col-md-4 {
+  display: flex;
+  margin-bottom: 4rem;
+}
+
+/* Hover Effect: Smooth Scale & Glow */
+.cert-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 10px 30px rgba(0, 238, 255, 0.6);
+  border-color: rgba(0, 238, 255, 0.8); /* Brighter Neon Glow */
+}
+
+/* Certification Image */
+.cert-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;
+}
+
+/* Hover Effect on Image */
+.cert-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Certification Content */
+.cert-content {
+  padding: 15px;
+}
+
+/* Certification Title */
+.cert-content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* Certification Title Link */
+.cert-content h3 a {
+  color: #00eeff; /* Neon Blue */
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+
+/* Hover Effect on Title */
+.cert-content h3 a:hover {
+  color: #ffffff;
+}
+
+/* Certification Description */
+.cert-content p {
+  font-size: 14px;
+  color: #bbb; /* Light Gray */
+}
+
+/* More Certifications Button */
+.cert-btn {
+  background: #00eeff;
+  color: #000;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 12px 25px;
+  border-radius: 8px;
+  display: inline-block;
+  text-decoration: none;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+/* Button Hover Effect */
+.cert-btn:hover {
+  background: #ffffff;
+  color: #000;
+  transform: scale(1.05);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cert-card img {
+      height: 180px;
+  }
+
+  .cert-content h3 {
+      font-size: 16px;
+  }
+
+  .cert-content p {
+      font-size: 13px;
+  }
+}
+
+
 
 .no-gutters {
   margin-right: 0;
@@ -875,12 +1102,64 @@ pre {
     -ms-flex-positive: 1;
     flex-grow: 1;
     max-width: 100%; }
-.underline {
-  width: 100%;
-  height: 4px;
-  background-image: linear-gradient(to right, rgb(255, 255, 255) 0%, rgb(244, 244, 125) 20%,rgb(238, 238, 36) 50%, #ffbd39 100%);
-  margin-top: 5px;
-  opacity: 50%; }
+    .underline {
+      width: 100%;
+      height: 4px;
+      position: relative;
+      background: linear-gradient(to right, #ffffff, #f4f47d, #eeee24, #00eeff);
+      border-radius: 50px;
+      margin-top: 5px;
+      opacity: 80%;
+      animation: gradientMove 3s infinite linear alternate;
+  }
+  
+  /* Glowing Effect */
+  .underline::before {
+      content: "";
+      position: absolute;
+      top: -4px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      filter: blur(6px);
+      opacity: 0.6;
+  }
+  
+  /* Animated Flowing Gradient */
+  @keyframes gradientMove {
+      0% {
+          background-position: 0% 50%;
+      }
+      100% {
+          background-position: 100% 50%;
+      }
+  }
+  
+  /* Adding a Pulsating Glow */
+  .underline::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 238, 255, 0.5);
+      opacity: 0.6;
+      filter: blur(8px);
+      animation: glowPulse 2s infinite alternate;
+  }
+  
+  /* Glow Pulsing Effect */
+  @keyframes glowPulse {
+      0% {
+          opacity: 0.3;
+      }
+      100% {
+          opacity: 0.8;
+      }
+  }
+  
   .col-md-1 {
     -webkit-box-flex: 0;
     -ms-flex: 0 0 8.33333%;
@@ -3466,16 +3745,39 @@ input[type="button"].btn-block {
     -ms-flex-pack: justify;
     justify-content: space-between; }
 
-.navbar-brand {
-  display: inline-block;
-  padding-top: 0.3125rem;
-  padding-bottom: 0.3125rem;
-  margin-right: 1rem;
-  font-size: 1.25rem;
-  line-height: inherit;
-  white-space: nowrap; }
-  .navbar-brand:hover, .navbar-brand:focus {
-    text-decoration: none; }
+    .navbar-brand {
+      display: inline-block;
+      padding-top: 0.3125rem;
+      padding-bottom: 0.3125rem;
+      margin-right: 1rem;
+      font-size: 1.25rem;
+      line-height: inherit;
+      white-space: nowrap;
+      color: var(--primary); /* Ensures it matches your theme */
+      transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      animation: fadeIn 1s ease-in-out; /* Fade-in animation */
+    }
+    
+    /* Hover Effect */
+    .navbar-brand:hover, .navbar-brand:focus {
+      text-decoration: none;
+      color: #00EEFF; /* Bright cyan glow effect */
+      transform: scale(1.1) rotate(2deg); /* Slight zoom and tilt */
+      text-shadow: 0px 0px 10px rgba(0, 238, 255, 0.7); /* Glow effect */
+    }
+    
+    /* Keyframes for Fade-In Effect */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
 
 .navbar-nav {
   display: -webkit-box;
@@ -8162,10 +8464,10 @@ a {
   -webkit-transition: .3s all ease;
   -o-transition: .3s all ease;
   transition: .3s all ease;
-  color: #ffbd39; }
+  color: #00eeff; }
   a:hover, a:focus {
     text-decoration: none;
-    color: #ffbd39;
+    color: #00eeff;
     outline: none !important; }
 
 h1, h2, h3, h4, h5,
@@ -8175,7 +8477,7 @@ h1, h2, h3, h4, h5,
   font-weight: 400; }
 
 .text-primary {
-  color: #ffbd39 !important; }
+  color: #00eeff !important; }
 
 .ftco-navbar-light {
   background: transparent !important;
@@ -8233,7 +8535,7 @@ h1, h2, h3, h4, h5,
         height: 2px;
         bottom: 0;
         left: 0;
-        background: #ffbd39;
+        background: #00eeff;
         visibility: visible;
         -webkit-transform: scaleX(0);
         -moz-transform: scaleX(0);
@@ -8261,12 +8563,12 @@ h1, h2, h3, h4, h5,
         color: #fff; } }
   .ftco-navbar-light .navbar-nav > .nav-item.cta > a {
     color: #fff;
-    border: 1px solid #ffbd39;
+    border: 1px solid #00eeff;
     padding-top: .7rem;
     padding-bottom: .7rem;
     padding-left: 18px;
     padding-right: 18px;
-    background: #ffbd39;
+    background: #00eeff;
     margin-top: 0;
     -webkit-border-radius: 5px;
     -moz-border-radius: 5px;
@@ -8276,15 +8578,15 @@ h1, h2, h3, h4, h5,
       display: inline-block;
       color: #fff; }
     .ftco-navbar-light .navbar-nav > .nav-item.cta > a:hover {
-      background: #ffbd39;
-      border: 1px solid #ffbd39; }
+      background: #00eeff;
+      border: 1px solid #00eeff; }
   .ftco-navbar-light .navbar-nav > .nav-item.cta.cta-colored a {
     border: 1px solid #a0f669;
     background: #a0f669 !important; }
   .ftco-navbar-light .navbar-nav > .nav-item .nav-link.active {
     background: transparent;
     background: none;
-    color: #ffbd39; }
+    color: #00eeff; }
     .ftco-navbar-light .navbar-nav > .nav-item .nav-link.active span:before {
       visibility: visible;
       -webkit-transform: scaleX(1);
@@ -8292,7 +8594,7 @@ h1, h2, h3, h4, h5,
       transform: scaleX(1); }
   @media (max-width: 991.98px) {
     .ftco-navbar-light .navbar-nav > .nav-item.active > a {
-      color: #ffbd39; } }
+      color: #00eeff; } }
   .ftco-navbar-light .navbar-toggler {
     border: none;
     color: rgba(255, 255, 255, 0.5) !important;
@@ -8303,7 +8605,7 @@ h1, h2, h3, h4, h5,
     letter-spacing: .1em; }
     .ftco-navbar-light .navbar-toggler:hover, .ftco-navbar-light .navbar-toggler:focus {
       text-decoration: none;
-      color: #ffbd39;
+      color: #00eeff;
       outline: none !important; }
   .ftco-navbar-light.scrolled {
     position: fixed;
@@ -8323,10 +8625,10 @@ h1, h2, h3, h4, h5,
           padding-right: 0 !important;
           padding-bottom: 20px !important; } }
     .ftco-navbar-light.scrolled .nav-item.active > a {
-      color: #ffbd39 !important; }
+      color: #00eeff !important; }
     .ftco-navbar-light.scrolled .nav-item.cta > a {
       color: #fff !important;
-      background: #ffbd39;
+      background: #00eeff;
       border: none !important;
       padding-top: 0.5rem !important;
       padding-bottom: .5rem !important;
@@ -8341,7 +8643,7 @@ h1, h2, h3, h4, h5,
         display: inline-block;
         color: #fff !important; }
     .ftco-navbar-light.scrolled .nav-item.cta.cta-colored span {
-      border-color: #ffbd39; }
+      border-color: #00eeff; }
     @media (max-width: 991.98px) {
       .ftco-navbar-light.scrolled .navbar-nav {
         background: none;
@@ -8360,7 +8662,7 @@ h1, h2, h3, h4, h5,
     .ftco-navbar-light.scrolled .nav-link {
       color: #000000 !important; }
       .ftco-navbar-light.scrolled .nav-link.active {
-        color: #ffbd39 !important; }
+        color: #00eeff !important; }
     .ftco-navbar-light.scrolled.awake {
       margin-top: 0px;
       -webkit-transition: .3s all ease-out;
@@ -8535,7 +8837,7 @@ h1, h2, h3, h4, h5,
           font-size: 14px;
           letter-spacing: 3px;
           text-transform: uppercase;
-          color: #ffbd39; }
+          color: #00eeff; }
         .owl-carousel.home-slider .slider-item .slider-text .text {
           position: relative;
           z-index: 1; }
@@ -8546,7 +8848,7 @@ h1, h2, h3, h4, h5,
           font-weight: 800; }
           .owl-carousel.home-slider .slider-item .slider-text h1 span {
             font-weight: 800;
-            color: #ffbd39; }
+            color: #00eeff; }
           @media (max-width: 991.98px) {
             .owl-carousel.home-slider .slider-item .slider-text h1 {
               color: #fff;
@@ -8568,7 +8870,7 @@ h1, h2, h3, h4, h5,
               color: rgba(255, 255, 255, 0.7);
               font-size: 23px; } }
         .owl-carousel.home-slider .slider-item .slider-text .btn-custom {
-          bordeR: 1px solid #ffbd39;
+          bordeR: 1px solid #00eeff;
           padding: 5px 20px;
           text-transform: uppercase;
           font-size: 12px;
@@ -8611,7 +8913,7 @@ h1, h2, h3, h4, h5,
           .owl-carousel.home-slider .owl-nav .owl-prev:hover span:before, .owl-carousel.home-slider .owl-nav .owl-prev:focus span:before {
             font-size: 20px;
             margin-top: 7px;
-            color: #ffbd39; }
+            color: #00eeff; }
       .owl-carousel.home-slider .owl-nav .owl-next {
         top: 0 !important;
         right: 0 !important; }
@@ -8624,7 +8926,7 @@ h1, h2, h3, h4, h5,
           .owl-carousel.home-slider .owl-nav .owl-next:hover span:before, .owl-carousel.home-slider .owl-nav .owl-next:focus span:before {
             font-size: 24px;
             margin-top: 7px;
-            color: #ffbd39; }
+            color: #00eeff; }
     .owl-carousel.home-slider .owl-dots {
       position: absolute;
       left: 0;
@@ -8693,9 +8995,9 @@ h1, h2, h3, h4, h5,
     .slider-text .breadcrumbs span a {
       color: rgba(255, 255, 255, 0.8); }
       .slider-text .breadcrumbs span a:hover, .slider-text .breadcrumbs span a:focus {
-        color: #ffbd39; }
+        color: #00eeff; }
         .slider-text .breadcrumbs span a:hover i, .slider-text .breadcrumbs span a:focus i {
-          color: #ffbd39; }
+          color: #00eeff; }
 
 .slider-text .bread {
   font-weight: 700;
@@ -8709,71 +9011,148 @@ h1, h2, h3, h4, h5,
   background: #191919 !important; }
 
 .bg-primary {
-  background: #ffbd39; }
-
-.btn {
-  cursor: pointer;
-  -webkit-border-radius: 40px;
-  -moz-border-radius: 40px;
-  -ms-border-radius: 40px;
-  border-radius: 40px;
-  -webkit-box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
-  -moz-box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
-  box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
-  font-size: 12px;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-weight: 600; }
+  background: #00eeff; }
+  .btn {
+    cursor: pointer;
+    border-radius: 40px;
+    box-shadow: 0px 24px 36px -11px rgba(0, 0, 0, 0.09);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    transition: all 0.4s ease-in-out;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  /* Remove outline */
   .btn:hover, .btn:active, .btn:focus {
-    outline: none; }
+    outline: none;
+  }
+  
+  /* Primary Button - Neon Glow & Hover Effects */
   .btn.btn-primary {
-    background: #ffbd39;
-    border: 1px solid #ffbd39 !important;
-    color: #000000 !important; }
-    .btn.btn-primary:hover {
-      border: 1px solid #ffbd39 !important;
-      background: #ffbd39 !important;
-      color: #000000 !important; }
-    .btn.btn-primary.btn-outline-primary {
-      border: 2px solid #ffbd39 !important;
-      background: transparent !important;
-      color: #ffbd39 !important; }
-      .btn.btn-primary.btn-outline-primary:hover {
-        border: 2px solid transparent !important;
-        background: #ffbd39 !important;
-        color: #fff !important; }
+    background: #00eeff;
+    border: 2px solid #00eeff !important;
+    color: #000000 !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn.btn-primary:hover {
+    background: #00ccff !important;
+    box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.9);
+    transform: scale(1.05);
+  }
+  
+  /* Primary Outline Button */
+  .btn.btn-primary.btn-outline-primary {
+    border: 2px solid #00eeff !important;
+    background: transparent !important;
+    color: #00eeff !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn.btn-primary.btn-outline-primary:hover {
+    background: #00eeff !important;
+    color: #fff !important;
+    box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.9);
+  }
+  
+  /* Secondary Button */
   .btn.btn-secondary {
     background: #a0f669 !important;
-    border: 1px solid #a0f669 !important;
-    color: #fff !important; }
-    .btn.btn-secondary:hover {
-      border: 1px solid #a0f669 !important;
-      background: transparent !important;
-      color: #a0f669 !important; }
-    .btn.btn-secondary.btn-outline-primary {
-      border: 1px solid #a0f669;
-      background: transparent;
-      color: #a0f669; }
-      .btn.btn-secondary.btn-outline-primary:hover {
-        border: 1px solid transparent;
-        background: #a0f669;
-        color: #fff; }
+    border: 2px solid #a0f669 !important;
+    color: #fff !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn.btn-secondary:hover {
+    background: transparent !important;
+    color: #a0f669 !important;
+    box-shadow: 0px 0px 15px rgba(160, 246, 105, 0.8);
+  }
+  
+  /* Secondary Outline Button */
+  .btn.btn-secondary.btn-outline-primary {
+    border: 2px solid #a0f669;
+    background: transparent;
+    color: #a0f669;
+  }
+  
+  .btn.btn-secondary.btn-outline-primary:hover {
+    background: #a0f669;
+    color: #fff;
+    box-shadow: 0px 0px 15px rgba(160, 246, 105, 0.8);
+  }
+  
+  /* White Button */
   .btn.btn-white {
     background: #fff !important;
-    border: 1px solid #fff !important;
-    color: #000000 !important; }
-    .btn.btn-white:hover {
-      border: 1px solid #000000;
-      background: #fff !important;
-      color: #fff; }
-    .btn.btn-white.btn-outline-white {
-      border: 1px solid rgba(255, 255, 255, 0.5) !important;
-      background: transparent !important;
-      color: #fff !important; }
-      .btn.btn-white.btn-outline-white:hover {
-        border: 1px solid transparent;
-        background: #ffbd39;
-        color: #fff; }
+    border: 2px solid #fff !important;
+    color: #000000 !important;
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .btn.btn-white:hover {
+    background: #f0f0f0 !important;
+    box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.8);
+    transform: scale(1.05);
+  }
+  
+  /* White Outline Button */
+  .btn.btn-white.btn-outline-white {
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    background: transparent !important;
+    color: #fff !important;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+  }
+  
+  .btn.btn-white.btn-outline-white:hover {
+    background: #00eeff;
+    color: #fff;
+    box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.9);
+  }
+  
+  /* Glow Effect */
+  @keyframes pulseGlow {
+    0% {
+      box-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(0, 238, 255, 1);
+    }
+    100% {
+      box-shadow: 0 0 10px rgba(0, 238, 255, 0.7);
+    }
+  }
+  
+  /* Apply Glow on Hover */
+  .btn:hover {
+    animation: pulseGlow 1.5s infinite;
+  }
+  
+  /* Ripple Effect on Click */
+  .btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(0, 238, 255, 0.4) 0%, rgba(0, 238, 255, 0) 60%);
+    transition: all 0.5s ease-in-out;
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: 0;
+  }
+  
+  .btn:active::before {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0;
+    transition: 0.4s;
+  }
+  
 
 .ftco-about .img-about {
   width: 100%;
@@ -8785,29 +9164,160 @@ h1, h2, h3, h4, h5,
     position: relative;
     z-index: 1; }
 
-.ftco-about ul.about-info {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-  width: 100%; }
-  .ftco-about ul.about-info li {
-    list-style: none;
-    margin-bottom: 10px; }
+    .ftco-about ul.about-info {
+      display: inline-block;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+    }
+    
+    /* List Styling */
+    .ftco-about ul.about-info li {
+      list-style: none;
+      margin-bottom: 10px;
+      padding: 10px;
+      transition: background 0.3s ease-in-out, transform 0.3s ease-in-out;
+      border-radius: 5px;
+    }
+    
+    /* Text inside list */
     .ftco-about ul.about-info li span {
-      width: calc(100% - 130px); }
-      .ftco-about ul.about-info li span:first-child {
-        font-weight: 600;
-        color: #fff;
-        width: 130px; }
+      width: calc(100% - 130px);
+      transition: color 0.3s ease-in-out;
+    }
+    
+    /* Label (First Span) */
+    .ftco-about ul.about-info li span:first-child {
+      font-weight: 600;
+      color: #fff;
+      width: 130px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    /* Hover Effect for Each List Item */
+    .ftco-about ul.about-info li:hover {
+      background: rgba(0, 238, 255, 0.1); /* Light background glow */
+     
+      box-shadow: 0px 0px 15px rgba(0, 238, 255, 0.5); /* Soft neon glow */
+    }
+    
+    /* Text color change on hover */
+    .ftco-about ul.about-info li:hover span:first-child {
+      color: #00eeff; /* Neon effect */
+    }
+    
+    /* Counter Section */
+    .ftco-about .counter-wrap .text p {
+      font-size: 20px;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    /* Counter Span */
+    .ftco-about .counter-wrap .text p span {
+      font-weight: 400;
+      color: #fff;
+      transition: color 0.3s ease-in-out;
+    }
+    
+    /* Number Styling */
+    .ftco-about .counter-wrap .text p span.number {
+      font-weight: 600;
+      color: #00eeff;
+    }
+    
+    /* Hover Effect on Counter */
+    .ftco-about .counter-wrap .text:hover p span {
+      color: #00eeff; /* Highlight effect */
+    }
 
-.ftco-about .counter-wrap .text p {
-  font-size: 20px; }
-  .ftco-about .counter-wrap .text p span {
-    font-weight: 400;
-    color: #fff; }
-  .ftco-about .counter-wrap .text p span.number {
-    font-weight: 600;
-    color: #ffbd39; }
+    .about-info {
+      background: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background */
+      padding: 20px;
+      border-radius: 10px;
+      color: #fff;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+      transition: all 0.4s ease-in-out;
+      position: relative;
+      overflow: hidden;
+      margin-bottom: 3rem;
+    }
+    
+    /* Glow & Hover Effects */
+    .about-info:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(0, 238, 255, 0.8);
+      /* background: linear-gradient(135deg, rgba(0, 238, 255, 0.3), rgba(0, 0, 0, 0.8)); */
+    }
+    
+    /* Text Animation */
+    .about-info p {
+      font-size: 18px;
+      font-weight: 500;
+      margin: 10px 0;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+    }
+    
+    /* Animated Underline Effect */
+    .about-info p span.title-s {
+      font-weight: 700;
+      color: #00eeff;
+      position: relative;
+    }
+    
+    .about-info p span.title-s::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 100%;
+      height: 2px;
+      background-color: #00eeff;
+      transform: scaleX(0);
+      transition: transform 0.3s ease-in-out;
+    }
+    
+    .about-info:hover p span.title-s::after {
+      transform: scaleX(1);
+    }
+    
+    /* Floating Animation */
+    @keyframes float {
+      0% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-5px);
+      }
+      100% {
+        transform: translateY(0);
+      }
+    }
+    
+    .about-info:hover p {
+      animation: float 1.5s infinite ease-in-out;
+    }
+    
+    /* Glow Border Animation */
+    @keyframes borderGlow {
+      0% {
+        border-color: rgba(0, 238, 255, 0.5);
+      }
+      50% {
+        border-color: rgba(0, 238, 255, 1);
+      }
+      100% {
+        border-color: rgba(0, 238, 255, 0.5);
+      }
+    }
+    
+    .about-info:hover {
+      animation: borderGlow 1.5s infinite;
+      border: 2px solid rgba(0, 238, 255, 0.5);
+    }
+    
+    
 
 .resume-wrap {
   width: 100%;
@@ -8821,7 +9331,7 @@ h1, h2, h3, h4, h5,
   .resume-wrap .date {
     font-weight: 900;
     font-size: 26px;
-    color: #ffbd39; }
+    color: #00eeff; }
   .resume-wrap h2 {
     font-size: 26px; }
   .resume-wrap .position {
@@ -8844,7 +9354,7 @@ h1, h2, h3, h4, h5,
     .services-1 .icon i {
       font-size: 60px;
       line-height: 1.0;
-      color: #ffbd39; }
+      color: #00eeff; }
   .services-1 .desc h3 {
     line-height: 1.3;
     font-size: 13px;
@@ -8861,7 +9371,7 @@ h1, h2, h3, h4, h5,
       content: '';
       width: 30px;
       height: 1px;
-      background: #ffbd39;
+      background: #00eeff;
       margin: 0 auto; }
     .services-1 .desc h3 a {
       color: #fff; }
@@ -8874,9 +9384,9 @@ h1, h2, h3, h4, h5,
     text-transform: uppercase;
     font-size: 12px;
     margin-bottom: 10px;
-    color: #ffbd39; }
+    color: #00eeff; }
   .services-1:hover {
-    background: #ffbd39; }
+    background: #00eeff; }
     .services-1:hover .icon i {
       color: #fff; }
     .services-1:hover h3 {
@@ -8900,7 +9410,7 @@ h1, h2, h3, h4, h5,
   overflow: visible; }
 
 .progress-bar {
-  background: #ffbd39;
+  background: #00eeff;
   -webkit-box-shadow: none;
   box-shadow: none;
   font-size: 12px;
@@ -8920,7 +9430,7 @@ h1, h2, h3, h4, h5,
     width: 34px;
     height: 34px;
     content: '';
-    background: #ffbd39;
+    background: #00eeff;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     -ms-border-radius: 2px;
@@ -8935,14 +9445,14 @@ h1, h2, h3, h4, h5,
     color: #fff; }
 
 .ftco-hireme {
-  background: #ffbd39;
+  background: #00eeff;
   z-index: -1; }
   .ftco-hireme h2 {
     color: #fff;
     font-size: 40px;
     font-weight: 900; }
     .ftco-hireme h2 span {
-      color: #ffbd39; }
+      color: #00eeff; }
 
 @media (min-width: 992px) {
   .margin-top {
@@ -8985,7 +9495,7 @@ h1, h2, h3, h4, h5,
     bottom: 0;
     content: '';
     opacity: 0;
-    background: #ffbd39;
+    background: #00eeff;
     z-index: -1;
     -moz-transition: all 0.3s ease;
     -o-transition: all 0.3s ease;
@@ -9068,7 +9578,7 @@ textarea.form-control {
   visibility: hidden; }
 
 .bg-primary {
-  background: #ffbd39 !important; }
+  background: #00eeff !important; }
 
 .about-author {
   -webkit-border-radius: 5px;
@@ -9154,17 +9664,98 @@ textarea.form-control {
     .ftco-footer-social li a:hover {
       color: #fff; }
 
+/* Project Card Styling */
+.project-card {
+  background: #1a1a1a; /* Slightly Lighter Black */
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  text-align: center;
+  margin-bottom: 30px;
+  border: 1px solid rgba(0, 238, 255, 0.2); /* Subtle Blue Glow */
+}
+
+/* Hover Effect: Smooth Scale & Glow */
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 25px rgba(0, 238, 255, 0.6);
+  border-color: rgba(0, 238, 255, 0.8); /* Brighter Neon Glow */
+}
+
+/* Project Image */
+.project-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+  transition: transform 0.3s ease-out, filter 0.3s ease-out;  
+}
+
+/* Hover Effect on Image */
+.project-card:hover img {
+  transform: scale(1.1);
+  filter: brightness(1) contrast(1.2);
+}
+
+/* Project Content */
+.project-content {
+  padding: 15px;
+}
+
+/* Project Title */
+.project-content h3 {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+/* Project Title Link */
+.project-content h3 a {
+  color: #00eeff; /* Neon Blue */
+  text-decoration: none;
+  transition: color 0.3s ease-out;
+}
+
+/* Hover Effect on Title */
+.project-content h3 a:hover {
+  color: #ffffff;
+}
+
+/* Project Description */
+.project-content p {
+  font-size: 14px;
+  color: #bbb; /* Light Gray */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .project-card img {
+      height: 180px;
+  }
+
+  .project-content h3 {
+      font-size: 16px;
+  }
+
+  .project-content p {
+      font-size: 13px;
+  }
+}
+
+
 .footer-small-nav > li {
   display: inline-block; }
   .footer-small-nav > li a {
     margin: 0 10px 10px 0; }
     .footer-small-nav > li a:hover, .footer-small-nav > li a:focus {
-      color: #ffbd39; }
+      color: #00eeff; }
 
 .media .ftco-icon {
   width: 100px; }
   .media .ftco-icon span {
-    color: #ffbd39; }
+    color: #00eeff; }
 
 #map {
   width: 100%; }
@@ -9288,7 +9879,7 @@ textarea.form-control {
 .ftco-counter .text strong.number {
   font-weight: 700;
   font-size: 30px;
-  color: #ffbd39;
+  color: #00eeff;
   display: block; }
 
 .ftco-counter .text span {
@@ -9304,7 +9895,7 @@ textarea.form-control {
   display: block;
   font-size: 72px;
   font-weight: bold;
-  color: #ffbd39; }
+  color: #00eeff; }
 
 .ftco-counter .ftco-label {
   font-size: 12px;
@@ -9339,7 +9930,7 @@ textarea.form-control {
       .blog-entry .text .heading a {
         color: #fff; }
         .blog-entry .text .heading a:hover, .blog-entry .text .heading a:focus, .blog-entry .text .heading a:active {
-          color: #ffbd39; }
+          color: #00eeff; }
   .blog-entry .meta {
     display: inline-block;
     margin-right: 5px;
@@ -9348,11 +9939,11 @@ textarea.form-control {
     text-transform: uppercase;
     letter-spacing: 2px; }
     .blog-entry .meta span {
-      color: #ffbd39; }
+      color: #00eeff; }
     .blog-entry .meta a {
-      color: #ffbd39; }
+      color: #00eeff; }
       .blog-entry .meta a:hover {
-        color: #ffbd39; }
+        color: #00eeff; }
 
 .block-23 ul {
   padding: 0; }
@@ -9421,7 +10012,7 @@ textarea.form-control {
     -ms-border-radius: 50%;
     border-radius: 50%; }
     .contact-section .box .icon span {
-      color: #ffbd39;
+      color: #00eeff;
       font-size: 30px; }
   .contact-section .box h3 {
     font-size: 17px;
@@ -9471,7 +10062,7 @@ textarea.form-control {
     .block-21 .text .heading a {
       color: #fff; }
       .block-21 .text .heading a:hover, .block-21 .text .heading a:active, .block-21 .text .heading a:focus {
-        color: #ffbd39; }
+        color: #00eeff; }
   .block-21 .text .meta > div {
     display: inline-block;
     margin-right: 5px; }
@@ -9543,7 +10134,7 @@ textarea.form-control {
         font-size: 13px;
         letter-spacing: .1em;
         color: rgba(255, 255, 255, 0.3);
-        color: #ffbd39;
+        color: #00eeff;
         font-weight: 600;
         margin-bottom: 20px; }
       .comment-list li .comment-body .reply {
@@ -9608,7 +10199,7 @@ textarea.form-control {
         top: 0;
         color: #ccc; }
       .categories li a:hover, .categories li a:focus, .sidelink li a:hover, .sidelink li a:focus {
-        color: #ffbd39; }
+        color: #00eeff; }
     .categories li.active a, .sidelink li.active a {
       color: #000000;
       font-style: italic; }
