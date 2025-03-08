@@ -200,7 +200,7 @@
 			/* Adjust if needed */
 			width: 100%;
 			/* margin-top: 1rem; */
-			margin-left: 3.5rem;
+			/* margin-left: 4.5rem; */
 		}
 
 		.lottie-container dotlottie-player {
@@ -241,6 +241,41 @@
 		.lottie-container dotlottie-player {
 			animation: floatAnimation 3s ease-in-out infinite;
 		}
+		.background-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+/* Home section with an overlay for transparency */
+#home-section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Semi-transparent overlay for better readability */
+#home-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.863); /* Adjust transparency (0.5 = 50% opacity) */
+    z-index: 0;
+}
+
+/* Ensuring content appears above the overlay */
+#home-section .home-slider {
+    position: relative;
+    z-index: 1;
+}
+
+
 	</style>
 
 
@@ -274,73 +309,58 @@
 		</div>
 	</nav>
 	<section id="home-section" class="hero">
-		<div class="home-slider  owl-carousel">
-			<div class="slider-item ">
+		<video autoplay loop muted playsinline class="background-video">
+			<source src='/images/background7.mp4' type="video/mp4">
+			Your browser does not support the video tag.
+		</video>
+		<div class="home-slider owl-carousel">
+			<div class="slider-item">
 				<div class="overlay"></div>
 				<div class="container">
 					<div class="row d-md-flex no-gutters slider-text align-items-end justify-content-end"
 						data-scrollax-parent="true">
 						<div class="one-third js-fullheight order-md-last img">
 							<div class="lottie-container">
+								<!-- src="https://lottie.host/db892530-c217-4b1e-be96-ec41c22b46f5/lAZfwKbPGr.lottie" -->
 								<dotlottie-player
 									src="https://lottie.host/76859292-cc6b-462f-b1d6-6c9bbd64ec19/NcanRQwcTr.lottie"
-									background="transparent" 
-									speed="1" 
-									style="width: 100%; height: 100%;" 
-									loop 
-									autoplay>
+									background="transparent"
+									speed="1"
+									style="width: 100%; height: 100%;"
+									loop autoplay>
 								</dotlottie-player>
 							</div>
-							
-
 							<div class="overlay"></div>
 						</div>
-						<div class="one-forth d-flex  align-items-center ftco-animate"
+						<div class="one-forth d-flex align-items-center ftco-animate"
 							data-scrollax=" properties: { translateY: '70%' }">
 							<div class="text">
 								<span class="subheading">Hello!</span>
 								<h1 class="mb-4 mt-3">I'm <span>Nishant Jhade</span></h1>
-
-								<!-- Element to contain animated typing -->
+	
 								<span id="typing-animation"></span>
-
+	
 								<script>
-
-									// Initialize the typing animation
 									const typingAnimationElement = document.getElementById('typing-animation');
-
-									// Create an array of typing text
-									const typingTexts = [
-										'Engineer',
-										'MERN Stack Developer',
-									];
-
-									// Create a function to display the typing animation for a given text
+									const typingTexts = ['Engineer', 'MERN Stack Developer'];
+	
 									function playTypingAnimation(text) {
-										// Loop through each character and add it to the element
 										for (let i = 0; i < text.length; i++) {
 											setTimeout(() => {
 												typingAnimationElement.textContent += text[i];
-											}, i * 200); // Increase the delay to slow down the typing animation
+											}, i * 200);
 										}
-
-										// Once the animation is complete, reset the text and start over
 										setTimeout(() => {
 											typingAnimationElement.textContent = '';
 											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
 										}, text.length * 200);
 									}
-
-									// Start the typing animation loop
+	
 									playTypingAnimation(typingTexts[0]);
-
 								</script>
-
-								<br>
-								<br>
+	
+								<br><br>
 								<h2>Software Engineer</h2>
-								<!-- <h2 class="d-flex" style="margin-bottom: 0">With over 5 years of experience</h2> -->
-								<!-- <br> -->
 								<p>
 									<a href="https://github.com/nishant-x"
 										class="btn btn-white btn-outline-white py-3 px-4">My works</a>
@@ -352,6 +372,7 @@
 			</div>
 		</div>
 	</section>
+	
 
 
 
@@ -1124,8 +1145,12 @@
 	<script src="js/aos.js"></script>
 	<script src="js/jquery.animateNumber.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
+	<script
+  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
+  type="module"
+></script>
 	<script type="module">
-		src = "https://unpkg.com/docsgpt/dist/modern/main.js"
+		src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
 		window.onload = function () {
 			renderDocsGPTWidget("app", {
 				apiKey: "a4558c46-c1ce-4a6e-a713-f0ab315ea7df",
@@ -1138,7 +1163,7 @@
 		};
 	</script>
 
-	<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+	<!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> -->
 
 	<script src="js/main.js"></script>
 
