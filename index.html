@@ -57,52 +57,59 @@
 			height: .7rem;
 			background-color: #00eeff;
 		}
+
 		/* Skill Section Styling */
-.skill-mf {
-    padding: 20px;
-    background: #121212; /* Dark Background */
-    border-radius: 12px;
-    box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.2);
-}
+		.skill-mf {
+			padding: 20px;
+			background: #121212;
+			/* Dark Background */
+			border-radius: 12px;
+			box-shadow: 0px 4px 10px rgba(0, 238, 255, 0.2);
+		}
 
-/* Skill Title */
-.title-s {
-    font-size: 20px;
-    font-weight: bold;
-    color: #00eeff; /* Neon Blue */
-    margin-bottom: 15px;
-}
+		/* Skill Title */
+		.title-s {
+			font-size: 20px;
+			font-weight: bold;
+			color: #00eeff;
+			/* Neon Blue */
+			margin-bottom: 15px;
+		}
 
-/* Skill Label */
-.skill-mf span {
-    font-size: 16px;
-    font-weight: bold;
-    color: #ffffff;
-}
+		/* Skill Label */
+		.skill-mf span {
+			font-size: 16px;
+			font-weight: bold;
+			color: #ffffff;
+		}
 
-/* Progress Bar Container */
-.progress {
-    height: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Light Background */
-    border-radius: 5px;
-    overflow: hidden;
-    margin-bottom: 15px;
-    position: relative;
-}
+		/* Progress Bar Container */
+		.progress {
+			height: 10px;
+			background: rgba(255, 255, 255, 0.1);
+			/* Light Background */
+			border-radius: 5px;
+			overflow: hidden;
+			margin-bottom: 15px;
+			position: relative;
+		}
 
-/* Animated Progress Bar */
-.progress-bar {
-    height: 100%;
-    background: linear-gradient(90deg, #00eeff, #0077ff); /* Neon Blue Gradient */
-    border-radius: 5px;
-    width: 0; /* Initially Set to 0% */
-    transition: width 2s ease-in-out; /* Smooth Fill Animation */
-}
+		/* Animated Progress Bar */
+		.progress-bar {
+			height: 100%;
+			background: linear-gradient(90deg, #00eeff, #0077ff);
+			/* Neon Blue Gradient */
+			border-radius: 5px;
+			width: 0;
+			/* Initially Set to 0% */
+			transition: width 2s ease-in-out;
+			/* Smooth Fill Animation */
+		}
 
-/* Apply animation when the section is visible */
-.skill-mf.animated .progress-bar {
-    width: var(--progress-width);
-}
+		/* Apply animation when the section is visible */
+		.skill-mf.animated .progress-bar {
+			width: var(--progress-width);
+		}
 
 
 
@@ -203,16 +210,17 @@
 			/* margin-left: 4.5rem; */
 		}
 
-		.lottie-container dotlottie-player {
+		#threedd {
 			transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
 			display: block;
 			/* Ensures it's not inline */
 			margin: auto;
+			cursor: grab;
 			/* Centers the animation */
 		}
 
 		/* 🔥 Hover Effect: Subtle Zoom & Glow */
-		.lottie-container:hover dotlottie-player {
+		#threedd:hover {
 			transform: scale(1.08) rotate(2deg);
 			/* Slight tilt for a dynamic feel */
 			filter: drop-shadow(0px 0px 25px rgba(9, 233, 249, 0.7));
@@ -238,44 +246,44 @@
 		}
 
 		/* Apply the floating effect */
-		.lottie-container dotlottie-player {
+		#threedd {
 			animation: floatAnimation 3s ease-in-out infinite;
 		}
+
 		.background-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: -1;
-}
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			z-index: -1;
+		}
 
-/* Home section with an overlay for transparency */
-#home-section {
-    position: relative;
-    overflow: hidden;
-}
+		/* Home section with an overlay for transparency */
+		#home-section {
+			position: relative;
+			overflow: hidden;
+		}
 
-/* Semi-transparent overlay for better readability */
-#home-section::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.863); /* Adjust transparency (0.5 = 50% opacity) */
-    z-index: 0;
-}
+		/* Semi-transparent overlay for better readability */
+		#home-section::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background: rgba(0, 0, 0, 0.863);
+			/* Adjust transparency (0.5 = 50% opacity) */
+			z-index: 0;
+		}
 
-/* Ensuring content appears above the overlay */
-#home-section .home-slider {
-    position: relative;
-    z-index: 1;
-}
-
-
+		/* Ensuring content appears above the overlay */
+		#home-section .home-slider {
+			position: relative;
+			z-index: 1;
+		}
 	</style>
 
 
@@ -322,13 +330,22 @@
 						<div class="one-third js-fullheight order-md-last img">
 							<div class="lottie-container">
 								<!-- src="https://lottie.host/db892530-c217-4b1e-be96-ec41c22b46f5/lAZfwKbPGr.lottie" -->
-								<dotlottie-player
+								<!-- <dotlottie-player
 									src="https://lottie.host/76859292-cc6b-462f-b1d6-6c9bbd64ec19/NcanRQwcTr.lottie"
 									background="transparent"
 									speed="1"
 									style="width: 100%; height: 100%;"
 									loop autoplay>
-								</dotlottie-player>
+								</dotlottie-player> -->
+
+								<model-viewer id="threedd" style="width: 100%; height: 80%;"
+									src="./images/3dmodel/sci-fi_factory_computer_-_3d_model.glb" camera-controls
+									disable-zoom shadow-intensity="1" environment-image="neutral" exposure="1"
+									interaction-prompt="auto" ar ar-modes="webxr scene-viewer quick-look"
+									ar-scale="fixed" poster="loading.jpg" loading="lazy">
+								</model-viewer>
+
+
 							</div>
 							<div class="overlay"></div>
 						</div>
@@ -337,13 +354,13 @@
 							<div class="text">
 								<span class="subheading">Hello!</span>
 								<h1 class="mb-4 mt-3">I'm <span>Nishant Jhade</span></h1>
-	
+
 								<span id="typing-animation"></span>
-	
+
 								<script>
 									const typingAnimationElement = document.getElementById('typing-animation');
 									const typingTexts = ['Engineer', 'MERN Stack Developer'];
-	
+
 									function playTypingAnimation(text) {
 										for (let i = 0; i < text.length; i++) {
 											setTimeout(() => {
@@ -355,10 +372,10 @@
 											playTypingAnimation(typingTexts[(typingTexts.indexOf(text) + 1) % typingTexts.length]);
 										}, text.length * 200);
 									}
-	
+
 									playTypingAnimation(typingTexts[0]);
 								</script>
-	
+
 								<br><br>
 								<h2>Software Engineer</h2>
 								<p>
@@ -372,7 +389,7 @@
 			</div>
 		</div>
 	</section>
-	
+
 
 
 
@@ -877,7 +894,7 @@
 					<p>Here are some of the certifications I collected along my Engineering Journey.</p>
 				</div>
 			</div>
-	
+
 			<div class="row">
 				<!-- Certification Card 1 -->
 				<div class="col-md-4 d-flex animate-cert">
@@ -892,7 +909,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Certification Card 2 -->
 				<div class="col-md-4 d-flex animate-cert">
 					<div class="cert-card">
@@ -906,7 +923,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Certification Card 3 -->
 				<div class="col-md-4 d-flex animate-cert">
 					<div class="cert-card">
@@ -920,7 +937,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Certification Card 4 -->
 				<div class="col-md-4 d-flex animate-cert">
 					<div class="cert-card">
@@ -933,7 +950,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Certification Card 5 -->
 				<div class="col-md-4 d-flex animate-cert">
 					<div class="cert-card">
@@ -946,7 +963,7 @@
 						</div>
 					</div>
 				</div>
-	
+
 				<!-- Certification Card 6 -->
 				<div class="col-md-4 d-flex animate-cert">
 					<div class="cert-card">
@@ -960,16 +977,16 @@
 					</div>
 				</div>
 			</div>
-	
+
 			<div class="row justify-content-center">
 				<div class="col-md-7 ftco-animate text-center">
 					<h2> <a href="https://www.linkedin.com/in/nishant-jhade-6b9a2b27b/"
 							class="btn btn-primary py-3 px-5">More Certifications</a> </h2>
 				</div>
-		</div>
+			</div>
 	</section>
-	
-	
+
+
 
 
 	<section class="ftco-section ftco-no-pt ftco-no-pb ftco-counter img" id="section-counter">
@@ -1145,10 +1162,7 @@
 	<script src="js/aos.js"></script>
 	<script src="js/jquery.animateNumber.min.js"></script>
 	<script src="js/scrollax.min.js"></script>
-	<script
-  src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
-  type="module"
-></script>
+	<script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 	<script type="module">
 		src = "https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs"
 		window.onload = function () {
@@ -1164,6 +1178,10 @@
 	</script>
 
 	<!-- <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> -->
+
+	<script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js">
+
+	</script>
 
 	<script src="js/main.js"></script>
 
