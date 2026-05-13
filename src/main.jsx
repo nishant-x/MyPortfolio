@@ -56,9 +56,9 @@ const navItems = [
 
 const stats = [
   ['7.59', 'B.Tech CGPA'],
-  ['3+', 'Featured Projects'],
-  ['2', 'Professional Roles'],
-  ['5+', 'Certifications'],
+  ['5+', 'Featured Projects'],
+  ['4+', 'Professional Roles'],
+  ['15+', 'Certifications'],
 ];
 
 const projects = [
